@@ -17,7 +17,19 @@ require_once get_template_directory() . '/inc/admin/acf.php';
 require_once get_template_directory() . '/inc/admin/podcasts.php';
 require_once get_template_directory() . '/inc/admin/press-items.php';
 require_once get_template_directory() . '/inc/admin/stories.php';
-require_once get_template_directory() . '/inc/admin/brand-partner-settings-page.php';
+// Brand Partner admin settings page — loaded only as admin_menu callback
+add_action('admin_menu', function () {
+    add_submenu_page(
+        'options-general.php',
+        'Brand Partner - Settings',
+        'Brand Partner',
+        'manage_options',
+        'brand-partner',
+        function () {
+            require_once get_template_directory() . '/inc/admin/brand-partner-settings-page.php';
+        }
+    );
+});
 require_once get_template_directory() . '/inc/admin/vip-customers.php';
 require_once get_template_directory() . '/inc/admin/gigfiliate-wp.php';
 require_once get_template_directory() . '/inc/admin/woocommerce.php';
