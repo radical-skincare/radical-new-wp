@@ -49,8 +49,8 @@ if (!isset($is_active_affiliate)) $is_active_affiliate = ($is_user_logged_in && 
             $menu_locations = get_nav_menu_locations();
             $menu_id = $menu_locations['mobile-navbar'];
             $mobile_nav = wp_get_nav_menu_items($menu_id);
-            if (function_exists('radical_nest_menu')) {
-              $mobile_nav = radical_nest_menu($mobile_nav);
+            if (function_exists('nest_menu')) {
+              $mobile_nav = nest_menu($mobile_nav);
             }
             ?>
             <?php if ($mobile_nav) : ?>
