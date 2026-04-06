@@ -1,0 +1,51 @@
+{
+    "key": "group_6538da752526d",
+    "title": "Page - Holiday",
+    "fields": [
+        {
+            "key": "field_6538da75c069c",
+            "label": "Products Order",
+            "name": "products_order",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Based on product price",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "DESC": "Descending (Greatest to Smallest)",
+                "ASC": "Ascending (Smallest to Greatest)"
+            },
+            "default_value": "DESC",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "views\/template-holiday-gift-guide.blade.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1698225346
+}

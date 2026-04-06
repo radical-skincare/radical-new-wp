@@ -1,0 +1,68 @@
+{
+    "key": "group_6017c88ab5b6e",
+    "title": "Brand Partner Enrollment",
+    "fields": [
+        {
+            "key": "field_641df97007fe3",
+            "label": "Request Brand Partner Re-Activation Form Shortcode",
+            "name": "request_brand_partner_reactivation_form_shortcode",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Shortcode shown to Brand Partners who want to re-activate their de-activated Brand Partner account.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_60c8f8c699512",
+            "label": "Enrollment Specials Product Cat value",
+            "name": "enrollment_specials_product_cat_value",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "product_cat",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "brand-partner-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1679686414
+}

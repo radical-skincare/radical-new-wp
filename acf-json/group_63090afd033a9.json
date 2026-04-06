@@ -1,0 +1,43 @@
+{
+    "key": "group_63090afd033a9",
+    "title": "Page - Contact",
+    "fields": [
+        {
+            "key": "field_63090b2326e6e",
+            "label": "Right Sidebar",
+            "name": "right_sidebar",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<p>\r\n    <strong>Topanga CA 90290<\/strong>\r\n<\/p>\r\n<p>1-424-330-6811<\/p>\r\n<p><a href=\"mailto:customercare@radicalskincare.com\">customercare@radicalskincare.com<\/a><\/p>\r\n<p><strong>Press Enquiries<\/strong><br>\r\n<a href=\"mailto:press@radicalskincare.com\">press@radicalskincare.com<\/a><\/p>\r\n<p><strong>Product Questions \/ Concerns<\/strong><\/p>\r\n<p>View <a href=\"https:\/\/radicalskincare.com\/frequently-asked-questions\/\" title=\"FAQ\">Frequently Asked Questions<\/a> We provide our customers with the absolute finest quality products we can develop, taking advantage of our substantial expertise in the field.<\/p>\r\n<p><a href=\"https:\/\/radicalskincare.com\/frequently-asked-questions\/\" title=\"F.A.Q.\">Delivery & Returns<\/p>\r\n<p>That being said, should you have any questions about any of our products, please do not hesitate to contact us at the following email address:\r\n<a href=\"mailto:customercare@radicalskincare.com\">customercare@radicalskincare.com<\/a><\/p>",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "views\/template-contact.blade.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1661541114
+}

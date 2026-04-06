@@ -1,0 +1,716 @@
+{
+    "key": "group_60a339b305639",
+    "title": "Brand Partner Settings",
+    "fields": [
+        {
+            "key": "field_60a36893ce268",
+            "label": "Dashboard",
+            "name": "dashboard",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_60a368a3ce269",
+                    "label": "Important Announcement",
+                    "name": "important_announcement",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60a368b4ce26a",
+                            "label": "Enable",
+                            "name": "enable",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_60a368bece26b",
+                            "label": "Text",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_60a368b4ce26a",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "NEW PRODUCT LAUNCH - <a href=\"https:\/\/radicalskincare.com\/products\/rejuvafirm-cbd-resurfacing-serum\/\" target=\"_blank\">Rejuvafirm CBD Resurfacing Serum<\/a> - This product is offered exclusively to Brand Partners from 5\/7 through 5\/17\/2021.",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_60a368d7ce26c",
+                            "label": "Show Read More",
+                            "name": "show_read_more",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_60a368b4ce26a",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_60a339ba4dce5",
+            "label": "Resource Center",
+            "name": "resource_center",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_60a34d6937e8a",
+                    "label": "News",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_60a34d2d37e84",
+                    "label": "News",
+                    "name": "news",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60a34d4037e85",
+                            "label": "Enable",
+                            "name": "enable",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_60a34d4e37e86",
+                            "label": "Content",
+                            "name": "content",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "<h3>NEW PRODUCT LAUNCH<\/h3>\r\n<strong>Rejuvafirm CBD Resurfacing Serum<\/strong>\r\n\r\nThis product is offered exclusively to Brand Partners from 5\/7 through 5\/17\/2021.  Brand Partners can purchase a single unit for $150 (retail price) or a bundle (two units) for $250 (a savings of $100 off retail pricing).  The two SKUs are located under menu item: <a href=\"https:\/\/radicalskincare.com\/product-category\/brand-partner-exclusive\/\" target=\"_blank\" rel=\"noopener\"><strong>Shop Products -&gt; Brand Partner Exclusive<\/strong><\/a>.  And by using your Brand Partner code, you will save 20% off the retail pricing.  Once the exclusive time period is over, we'll activate this product for Customer sales.  We love this product and know you will too!\r\n<ul>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/products\/rejuvafirm-cbd-resurfacing-serum\/\" target=\"_blank\" rel=\"noopener\">Rejuvafirm CBD Resurfacing Serum<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/products\/rejuvafirm-cbd-resurfacing-serum-bundle\/\" target=\"_blank\" rel=\"noopener\">Rejuvafirm CBD Resurfacing Serum Bundle (2 units)<\/a><\/li>\r\n<\/ul>\r\n<h3>May, June, July Consistency Incentive<\/h3>\r\n<strong>Generate $1,000+ in Customer Volume Per Month for 3 Consecutive Months<\/strong>\r\n<ul>\r\n \t<li>Generate $1,000+ in Customer Volume in May 2021<\/li>\r\n \t<li>Generate $1,000+ in Customer Volume in June 2021<\/li>\r\n \t<li>Generate $1,000+ in Customer Volume in July 2021<\/li>\r\n \t<li>Earn $500 cash bonus!!!<\/li>\r\n \t<li>Incentive Period for all existing Brand Partners: May 1 - July 31, 2021 at 11:59 AM PT<\/li>\r\n \t<li><em>For all new Brand Partners who enroll in June 2021, and generate $1,000+ in Customer Volume in June and July 2021, earn $250 cash bonus<\/em><\/li>\r\n \t<li><em>For all new Brand Partners who enroll in July 2021, and generate $1,000+ in Customer Volume in July 2021, earn $100 cash bonus<\/em><\/li>\r\n<\/ul>\r\n<h3>May, June, July Consistency Incentive Tracking<\/h3>\r\n<strong>Month 1 (May): Achievers = CONGRATULATIONS!<\/strong>\r\n<ul>\r\n \t<li>Diana Browning<\/li>\r\n \t<li>Paige Sullivan<\/li>\r\n \t<li>Emily Chapman<\/li>\r\n<\/ul>\r\n<strong>Month 1 (May): You've Got This! - Over Halfway There<\/strong>\r\n<ul>\r\n \t<li>Karey Hopkins<\/li>\r\n \t<li>Marijane Relth<\/li>\r\n \t<li>Kathy Gelfand<\/li>\r\n \t<li>Nancy Murphy<\/li>\r\n \t<li>Mariza Villarreal<\/li>\r\n \t<li>Sondae Fatemi<\/li>\r\n<\/ul>\r\n<strong>Month 1 (May): Keep Going = You Can Do It<\/strong>\r\n<ul>\r\n \t<li>Julie Koos<\/li>\r\n \t<li>Karen Leffler<\/li>\r\n \t<li>Kelli Kelly<\/li>\r\n \t<li>Tracy Farman<\/li>\r\n<\/ul>\r\nFor <strong>Previous Recognition<\/strong>, please click this <strong><a href=\"https:\/\/docs.google.com\/document\/d\/1n1GltXId_rDuQxb0XZBQ6_72qapJ1JUV3qdXNLyT608\/edit?usp=sharing\" target=\"_blank\" rel=\"noopener\">Google Doc link<\/a><\/strong>\r\n\r\n&nbsp;\r\n<h3>Welcome to the Radical Movement<\/h3>\r\nTo our Radical Sisters &amp; Misters on a Mission:\r\n\r\nWhen we were building Radical Skincare into the brand it is today, we knew that it couldn’t just be about skin care - it had to also be about self-care. Because we know how you feel on the inside is seen by the world.\r\n\r\nWe knew that we could inspire you, motivate you, change your outlook, change your WORLD and in order to do that we had to give you every opportunity we’ve been privileged to have. If we didn’t, it wouldn’t truly be RADICAL. For us, being RADICAL means giving the gift of a life you LOVE, and the tools so you can share that gift with others on your journey to light and prosperity.That’s why Radical Skincare is more than just skincare, it’s a RADICAL MOVEMENT where inner self meets outer beauty.\r\n\r\nMy sister Rachel and I created Radical Skincare to address our own personal skincare challenges. My sister developed severe rosacea after the birth of her second child and I was experiencing the effects of gravity, as well as adult acne. Rachel was on multiple oral and topical antibiotics to reduce inflammation but nothing worked to clear her skin. Working with our father Dr. Richard Edlich MD.Phd, and other top scientists, we created a proprietary technology (Trylacel) that was able to preserve the potency of antioxidants, anti-aging actives and skin calming\/ anti-inflammatory ingredients and deliver them to the skin without irritation. The results were astounding. It healed Rachel’s skin and changed mine for the better. Although we never intended to sell it, we felt compelled, like our father, to share it with the world in an effort to help others.\r\n\r\nRadical Skincare was born.\r\n\r\nWe assembled the A-TEAM of prestige skincare including the former CEO of Estee Lauder and the Chief Scientist from Clarins to share our Radical discovery with the world. In just 3 years, we went from Barneys NY in the USA, to over 900 stores in 17 countries.. My sister Rachel and I traveled around the world - training retail staff, doing press, promoting our book Get Radical - Secrets to Creating a Life You Love, and sharing not just Radical Skincare, but our Radical message of truly loving the skin you’re in.\r\n\r\nOur hard work paid off with investment dollars in kind and cash exceeding well over 25M to build and promote the brand. But despite working with the best brand management and retail investors in the world, we found we were not aligned in our mission to TRULY make a difference. What was once the source of our passion and joy began to feel like work, and we lost the heart and soul of what we stood for. So we said the RADICAL YES, and decided to buy our company back debt free and get back to the passion and purpose that drove us.\r\n\r\nWe dedicate our Radical movement to our father, Dr. Richard Edlich MD.Phd, a man who was truly Radical. He created Steri-Strips, and instead of selling them, he gave them to 3M so that the masses would have access to them. He created dissolvable sutures and wrote 3,000 peer review articles while immobile from the neck down in his wheelchair with MS. He was a true Radical Inspiration to us and it has fueled our burning desire to make a Radical Difference in the world.\r\n\r\n<strong>Liz &amp; Rachel Edlich<\/strong>",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_60a34d763ed4d",
+                    "label": "Events",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_60a34d5c37e87",
+                    "label": "Events",
+                    "name": "events",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60a34d5c37e88",
+                            "label": "Enable",
+                            "name": "enable",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_60a34d5c37e89",
+                            "label": "Content",
+                            "name": "content",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "<h3>Upcoming Events<\/h3>\r\nSee Upcoming Brand Partner events on the <a href=\"https:\/\/www.facebook.com\/groups\/radicalbrandpartners\/events\" target=\"_blank\" rel=\"noopener\">Facebook Group events page here.<\/a>\r\n\r\nHere is a list of some upcoming events for planning purposes.  <strong>These will be hosted on Zoom at 10:00am PST \/ 1:00pm EST<\/strong>.  For a recording of past events, please scroll down.\r\n\r\n<strong>MAY<\/strong>\r\n\r\n<em>3rd       Coffee + Conversation <strong>(Brand Partners Only)<\/strong> <a href=\"https:\/\/youtu.be\/geA4yjiNSok\" target=\"_blank\" rel=\"noopener\">(Zoom Recording)<\/a><\/em>\r\n\r\n<em>5th       Product Focus + Promotions <a href=\"https:\/\/youtu.be\/6FPSGsRDXjw\" target=\"_blank\" rel=\"noopener\">(Zoom Recording)<\/a><\/em>\r\n\r\n<em>10th     Radical SPF Training <a href=\"https:\/\/youtu.be\/f6cC9LlRKN0\" target=\"_blank\" rel=\"noopener\">(Zoom Link)<\/a><\/em>\r\n\r\n<em>12th     Radical Start Brand Partner Training <strong>(Taught by Marijane Relth)<\/strong> <a href=\"https:\/\/youtu.be\/cmJJ3ppPvVc\" target=\"_blank\" rel=\"noopener\">(Zoom Recording)<\/a><\/em>\r\n\r\n17th     Cocktails + Conversation <strong>(Brand Partners +<\/strong> <strong>Guests)<\/strong> <a href=\"https:\/\/www.eventbrite.com\/e\/153667618985\" target=\"_blank\" rel=\"noopener\">(Registration Link)<\/a> <a href=\"https:\/\/zoom.us\/j\/98851844372\" target=\"_blank\" rel=\"noopener\">(Zoom Link)<\/a>\r\n\r\n19th     Radical Start Training <strong>(Taught by Nancy Murphy) <\/strong><a href=\"https:\/\/zoom.us\/j\/97257900090\" target=\"_blank\" rel=\"noopener\">(Zoom Link)<\/a>\r\n\r\n20th.    Product Launch Event - Rejuvafirm CBD Resurfacing Serum <strong>(5 PM Pacific Time)<\/strong> <a href=\"https:\/\/zoom.us\/j\/98341773075\" target=\"_blank\" rel=\"noopener\">(Zoom Link)<\/a>\r\n\r\n24th     <strong>Radical Deep Dive:<\/strong> Get Radical: Secrets to Creating a Life You Love – Chapter 3 <a href=\"https:\/\/www.eventbrite.com\/e\/153679709147\" target=\"_blank\" rel=\"noopener\">(Registration Link)<\/a> <a href=\"https:\/\/zoom.us\/j\/91852608940\" target=\"_blank\" rel=\"noopener\">(Zoom Link)<\/a>\r\n\r\n26th     Radical Start Training <strong>(Taught by Emily Chapman) <\/strong><a href=\"https:\/\/zoom.us\/j\/97257900090\" target=\"_blank\" rel=\"noopener\">(Zoom Link)<\/a>\r\n\r\n&nbsp;\r\n\r\n<strong>PLAN AHEAD:  MONTHLY MONDAY SCHEDULE <\/strong>\r\n\r\n1st Monday – Coffee + Conversation (10am PST \/ 12pm CST \/ 1pm EST) - <em><strong>Brand Partners Only<\/strong><\/em>\r\n\r\n2nd Monday – Product + Promotions Training (10am PST \/ 12pm CST \/ 1pm EST)\r\n\r\n3rd Monday – Cocktails + Conversation (5pm PST \/ 7pm CST \/ 8pm EST)\r\n\r\n4th Monday – Radical Deep Dive (10am PST \/ 12pm CST \/ 1pm EST)\r\n\r\n&nbsp;\r\n<h3>Past Events<\/h3>\r\n<strong>Topic: Radical Start Brand Partner Training (by Marijane Relth)\r\nDate: May 12, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/cmJJ3ppPvVc\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Radical SPF Training\r\nDate: May 10, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/f6cC9LlRKN0\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Product Focus + Promotions\r\nDate: May 5, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/6FPSGsRDXjw\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Get Radical: Coffee + Conversation (Brand Partners Only)\r\nDate: May 3, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/geA4yjiNSok\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Get Radical: Secrets to Creating a Life You Love – Chapter 2\r\nDate: April 28, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/jk6JJXVUHBE\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Best Practices from Leading Brand Partners\r\nDate: April 21, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/qAf8Y7xH3y4\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Cocktails + Conversation\r\nDate: April 19, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/W4_qt561KTM\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Radical Product Kits + Enrollment Collections<\/strong>\r\n<strong>Date: April 14, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/b7SvESxaCyU\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n<a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/04\/Radical-Product-Kits-Enrollment-Collections.pdf\">Radical Product Kits &amp; Enrollment Collections<\/a>\r\n\r\n<strong>Topic: Build a Radical Team\r\nDate: April 7, 2021\r\n<\/strong><a href=\"https:\/\/www.youtube.com\/watch?v=puig4EPvwFo\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Coffee + Conversation (Brand Partners Only)\r\nDate: April 5, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/fC5zpA9Oq2A\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n<a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/04\/Radical-Coffee-and-Conversation.pdf\" target=\"_blank\" rel=\"noopener\">Radical Coffee and Conversation PDF<\/a>\r\n\r\n<strong>Topic: Get Radical: Secrets to Creating a Life You Love - Chapter 1\r\nDate: March 31, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/FfL2mGV3tao\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: A Walk Through Your Back Office\r\nDate: March 25, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/5AgO8-QezG8\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Using Radical Skincare Creative Resources\r\nDate: March 17, 2021\r\n<\/strong><a href=\"https:\/\/youtu.be\/cVQmzw2rTnE\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n<a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/03\/RS-Creative-Resources.pdf\" target=\"_blank\" rel=\"noopener\">RS Creative Resources PDF<\/a>\r\n\r\n<strong>Topic: Cocktails + Conversation<\/strong>\r\nDate: March 15, 2021\r\n<a href=\"https:\/\/youtu.be\/it1PDiHLyUc\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Let's Talk About Serums - March Product Focus &amp; Promotions<\/strong>\r\nDate: March 10, 2021\r\n<a href=\"https:\/\/youtu.be\/V0SPymQ25Oc\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n<a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/03\/Lets-Talk-About-Serums-Training.pdf\" target=\"_blank\" rel=\"noopener\">Lets Talk About Serums Training - PDF<\/a>\r\n\r\n<strong>Topic: Plan Your Product Earnings<\/strong>\r\nDate: March 3, 2021\r\n<a href=\"https:\/\/youtu.be\/B76fx_gBuCE\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Coffee + Conversation (Brand Partners Only)\r\n<\/strong>Date: March 1, 2021\r\n<a href=\"https:\/\/youtu.be\/rz0ehKtle8I\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Product Knowledge and Training with Liz, Rachel with Megan\r\n<\/strong>Date: February 24, 2021\r\n<a href=\"https:\/\/youtu.be\/JT8STQFdRRM\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Cocktails + Conversation\r\n<\/strong>Date: February 15, 2021\r\n<a href=\"https:\/\/youtu.be\/7iiaLOa9lZU\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Using Facebook &amp; Instagram to Spread the News of Your RS Business\r\n<\/strong>Date: February 10, 2021\r\n<a href=\"https:\/\/youtu.be\/dD38DSJnKj0\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Jump Right In with a 30-Day Quick Start\r\n<\/strong>Date: February 3, 2021\r\n<a href=\"https:\/\/youtu.be\/BCSS_C-LjlU\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n<strong>Topic: Radical Cocktails + Conversation<\/strong>\r\nDate: Jan 28, 2021\r\n<a href=\"https:\/\/youtu.be\/STY94PMlssw\" target=\"_blank\" rel=\"noopener\">Zoom Call Recording<\/a>\r\n\r\n&nbsp;\r\n\r\nSee Past Brand Partner recordings in our YouTube playlist <a href=\"https:\/\/www.youtube.com\/playlist?list=PLK1ptJqja-OCmJ9THGSnXcnIOimHf_5SP\">here.<\/a>\r\n<div class=\"embed-responsive embed-responsive-16by9 mb-5\"><iframe class=\"embed-responsive-item\" src=\"https:\/\/www.youtube.com\/embed\/videoseries?list=PLK1ptJqja-OCmJ9THGSnXcnIOimHf_5SP\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"><\/iframe><\/div>",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_60a34d7e3ed4e",
+                    "label": "Training",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_60a34d853ed4f",
+                    "label": "Training",
+                    "name": "training",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60a34d853ed50",
+                            "label": "Enable",
+                            "name": "enable",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_6122af7b04271",
+                            "label": "Lessons",
+                            "name": "lessons",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_60a34d853ed50",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 1,
+                            "max": 0,
+                            "layout": "row",
+                            "button_label": "Add Row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6122b06004273",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "parent_repeater": "field_6122af7b04271"
+                                },
+                                {
+                                    "key": "field_6122ba7491ee1",
+                                    "label": "Video Thumbnail",
+                                    "name": "thumbnail",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "parent_repeater": "field_6122af7b04271"
+                                },
+                                {
+                                    "key": "field_6122b04204272",
+                                    "label": "YouTube Video",
+                                    "name": "video",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "Example: https:\/\/www.youtube.com\/watch?v=HbXMsrKnkzM",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "parent_repeater": "field_6122af7b04271"
+                                },
+                                {
+                                    "key": "field_6122b07204274",
+                                    "label": "Quiz Question",
+                                    "name": "question",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "parent_repeater": "field_6122af7b04271"
+                                },
+                                {
+                                    "key": "field_6122b08a04275",
+                                    "label": "Quiz Answers",
+                                    "name": "answers",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 4,
+                                    "layout": "table",
+                                    "button_label": "Add Row",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6122b0a204276",
+                                            "label": "Text",
+                                            "name": "text",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": "",
+                                            "parent_repeater": "field_6122b08a04275"
+                                        },
+                                        {
+                                            "key": "field_6122b0bd04277",
+                                            "label": "Correct",
+                                            "name": "correct",
+                                            "aria-label": "",
+                                            "type": "true_false",
+                                            "instructions": "Is this the correct answer?",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 0,
+                                            "ui": 0,
+                                            "ui_on_text": "",
+                                            "ui_off_text": "",
+                                            "parent_repeater": "field_6122b08a04275"
+                                        }
+                                    ],
+                                    "rows_per_page": 20,
+                                    "parent_repeater": "field_6122af7b04271"
+                                }
+                            ],
+                            "rows_per_page": 20
+                        }
+                    ]
+                },
+                {
+                    "key": "field_60a351ed3ed55",
+                    "label": "Creatives",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_60a351e63ed52",
+                    "label": "Creatives",
+                    "name": "creatives",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60a351e63ed53",
+                            "label": "Enable",
+                            "name": "enable",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_60a351e63ed54",
+                            "label": "Content",
+                            "name": "content",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Here are some Brand Partner Creatives for you to use in your Radical marketing!\r\n\r\nPlease use this <strong><a href=\"https:\/\/drive.google.com\/drive\/folders\/16bm8OC446JCnOZnNSVqvh0CaBHm3_SMF?usp=sharing\" target=\"_blank\" rel=\"noopener\">Radical Asset Folder<\/a><\/strong> for digital assets and sample marketing copy.\r\n\r\nAs always, share as <strong>authentically<\/strong> as you can.  People love you for who you are!\r\n\r\n&nbsp;\r\n\r\n<strong>Sharing on Social Media<\/strong>\r\n<ul>\r\n \t<li>Go to the <strong><a href=\"https:\/\/drive.google.com\/drive\/folders\/16bm8OC446JCnOZnNSVqvh0CaBHm3_SMF?usp=sharing\" target=\"_blank\" rel=\"noopener\">Radical Asset Folder<\/a><\/strong><\/li>\r\n \t<li>Browse files of interest<\/li>\r\n \t<li>Download files<\/li>\r\n \t<li>Post to social media and @radicalskincare<\/li>\r\n<\/ul>\r\n&nbsp;\r\n\r\n<strong>Request Your Radical Skincare Brand Partner Business Card Template<\/strong>\r\n\r\nPlease complete the form linked <a href=\"https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLScgt82euFpytwacZC9oi77DXJs9nrmGzklgUl30U4S7WZGU4g\/viewform?usp=sf_link\" target=\"_blank\" rel=\"noopener\"><strong>here<\/strong><\/a>.",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_60a3524f51d19",
+                    "label": "Misc",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_60a3524a51d16",
+                    "label": "Misc",
+                    "name": "misc",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60a3524a51d17",
+                            "label": "Enable",
+                            "name": "enable",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_60a3524a51d18",
+                            "label": "Content",
+                            "name": "content",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "<h3>Helpful links that will help you get to know us, and our Radical Mission:<\/h3>\r\n<ul>\r\n \t<li><a href=\"https:\/\/www.youtube.com\/watch?v=8RJpq2B5Ymo\" target=\"_blank\" rel=\"noopener\">Radical Anthem<\/a><\/li>\r\n \t<li><a href=\"https:\/\/www.youtube.com\/watch?v=46Qt9K6uwYA&amp;feature=youtu.be\" target=\"_blank\" rel=\"noopener\">Become a Radical Brand Partner<\/a><\/li>\r\n \t<li><a href=\"https:\/\/www.youtube.com\/watch?v=SMISLSbLnuQ\" target=\"_blank\" rel=\"noopener\">The Story of Radical Skincare<\/a><\/li>\r\n \t<li><a href=\"http:\/\/getradicalbook.com\/012316\/Get%20Radical_Final%20Email%20Digital%20Manuscript.pdf\" target=\"_blank\" rel=\"noopener\">Get Radical: Secrets to Living A Life You Love (Digital Copy)<\/a><\/li>\r\n<\/ul>\r\n<h3>Helpful files for your Radical journey (all PDF files):<\/h3>\r\n<ul>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/01\/YOUR-FIRST-30-DAYS-2.pdf\" target=\"_blank\" rel=\"noopener\">Your First 30 Days<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/03\/Radical-Skincare-Comp-Plan.pdf\" target=\"_blank\" rel=\"noopener\">Radical Skincare Comp Plan<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/02\/Become-A-Radical-Brand-Partner-PDF.pdf\" target=\"_blank\" rel=\"noopener\">Become A Radical Brand Partner<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/02\/YOUR-GUIDE-TO-SOCIAL-SELLING.pdf\" target=\"_blank\" rel=\"noopener\">Your Guide to Social Selling<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/02\/Radical-Consciously-Clean.pdf\" target=\"_blank\" rel=\"noopener\">Radical Consciously Clean<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2020\/10\/RADICAL.PR_.pdf\" target=\"_blank\" rel=\"noopener\">Radical PR<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2020\/10\/RADICAL-SKINCARE-PRODUCTS-WITH-EARNINGS-1.pdf\" target=\"_blank\" rel=\"noopener\">Radical Skincare Products With Earnings<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2020\/10\/RADICAL-SKINCARE-PRODUCT-SHEETS-2.pdf\" target=\"_blank\" rel=\"noopener\">Radical Skincare Product Sheets<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/04\/Radical-Skincare-Price-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Radical Skincare Price Sheet<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2020\/10\/ENROLLMENT-EXCLUSIVES.pdf\" target=\"_blank\" rel=\"noopener\">Enrollment Exclusives<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/02\/Radical-Product-Regimen-and-Rituals.pdf\" target=\"_blank\" rel=\"noopener\">Radical Product Regimen and Rituals<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/02\/Radical-Product-Guide-by-Skin-Type-or-Collection.pdf\" target=\"_blank\" rel=\"noopener\">Radical Product Guide by Skin Type or Collection<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/02\/Radical-Regimen-Postcard.pdf\" target=\"_blank\" rel=\"noopener\">Radical Regimen - Postcard<\/a><\/li>\r\n \t<li><a href=\"https:\/\/radicalskincare.com\/wp-content\/uploads\/2021\/03\/Radical-Skincare-Kits.pdf\" target=\"_blank\" rel=\"noopener\">Radical Skincare Kits<\/a><\/li>\r\n<\/ul>",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_63e1e129997da",
+            "label": "Leaderboards Content",
+            "name": "leaderboards_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "brand-partner-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1675747700
+}
