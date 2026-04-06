@@ -51,16 +51,8 @@ defined('ABSPATH') || exit();
           ?>
           <div class="row">
             <?php while ( have_posts() ) : the_post(); ?>
-              <?php
-              // wc_get_template_part('content', 'product');
-              $product = get_post();
-              ?>
               <div class="col-lg-4 mb-4">
-                <?php
-                set_query_var('product', $product);
-                set_query_var('conditional_product_sale', $conditional_product_sale);
-                get_template_part('template-parts/content-product');
-                ?>
+                <?php get_template_part('template-parts/content-product'); ?>
               </div>
             <?php endwhile; ?>
           </div>
