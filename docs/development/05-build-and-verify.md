@@ -226,15 +226,15 @@ tail -50 ~/Local/sites/radical/logs/php/error.log
 
 ## Gate 5 Checklist
 
-- [ ] Theme activates without fatal errors
-- [ ] All core pages render
-- [ ] All 20 custom page templates selectable and rendering
-- [ ] WooCommerce shop → checkout flow functional
-- [ ] Subscription management functional
-- [ ] All 27 ACF field groups loading
-- [ ] No 404s for assets in DevTools
-- [ ] All JS functionality working
-- [ ] Visual regression check passed
-- [ ] PHP error log clean
+- [✅] Theme activates without fatal errors
+- [❌] All core pages render
+- [❌] All 20 custom page templates selectable and rendering
+- [❌] WooCommerce shop → checkout flow functional
+- [❌] Subscription management functional
+- [❌] All 27 ACF field groups loading
+- [❌] No 404s for assets in DevTools
+- [❌] All JS functionality working
+- [❌] Visual regression check passed
+- [❌] PHP error log clean
 
 **→ Type `A` to approve Gate 5 and proceed to Stage 6: Cutover**
