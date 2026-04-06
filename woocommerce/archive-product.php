@@ -18,10 +18,8 @@
 defined('ABSPATH') || exit();
 ?>
 
+<?php get_header('shop'); ?>
 <?php get_template_part('template-parts/modules/page/header'); ?>
-<?php
-do_action('get_header', 'shop');
-?>
 <?php /* <?php // commented out banner block ?> */ ?>
   <div class="container py-5">
     <?php get_template_part('template-parts/shop-sales-notice'); ?>
@@ -86,6 +84,4 @@ do_action('get_header', 'shop');
     do_action('woocommerce_after_main_content');
     ?>
   </div>
-<?php
-do_action('get_footer', 'shop');
-?>
+<?php get_footer('shop'); ?>
