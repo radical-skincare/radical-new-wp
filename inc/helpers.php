@@ -365,6 +365,21 @@ function radical_convert_number_to_word($number = 0) {
     return isset($words[$number]) ? $words[$number] : ($number + 1);
 }
 
+/**
+ * Function aliases — templates use radical_ prefix
+ */
+function radical_social_shares($social, $post) { return social_shares($social, $post); }
+function radical_cannot_access_brand_partner_product($post_id) { return cannot_Access_Brand_Partner_Product($post_id); }
+function radical_cannot_access_brand_partner_product_category($obj) { return cannot_Access_Brand_Partner_Product_Category($obj); }
+function radical_ordinal($number) { return ordinal($number); }
+function radical_orderby_dropdown_text($default = 'Top Sellers') { return orderby_Dropdown_Text($default); }
+function radical_formatted_billing_name($order) { return formatted_billing_name($order); }
+function radical_formatted_billing_address($order) { return formatted_billing_address($order); }
+function radical_formatted_shipping_name($order) { return formatted_shipping_name($order); }
+function radical_formatted_shipping_address($order) { return formatted_shipping_address($order); }
+function radical_get_subscription_savings($sub) { return get_subscription_savings($sub); }
+function radical_get_subscription_interval_period_text($sub = false) { return get_subscription_interval_period_text($sub); }
+
 function radical_wcsatt_scheme_interval_period_text($_wcsatt_scheme = []) {
     $subscription_period_interval = (int)$_wcsatt_scheme['subscription_period_interval'];
     $subscription_period = $_wcsatt_scheme['subscription_period'];
