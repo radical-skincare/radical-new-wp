@@ -17,6 +17,7 @@ add_action('wp_enqueue_scripts', function () {
     }
     if (is_post_type_archive('podcasts') || is_post_type_archive('events')) {
         wp_enqueue_style('owl-carousel', $uri . '/assets/css/vendor/owl.carousel.min.css');
+        wp_enqueue_script('owl-carousel-js', $uri . '/assets/js/vendor/owl.carousel.min.js', ['jquery'], '2.3.4', true);
     }
 
     // ── Theme CSS ────────────────────────────────────────────────────────────
@@ -28,8 +29,26 @@ add_action('wp_enqueue_scripts', function () {
     }
     wp_enqueue_script('bootstrap-js', $uri . '/assets/js/vendor/bootstrap.bundle.min.js', ['jquery'], '4.3.1', true);
 
+    // ── Smooth Scroll ────────────────────────────────────────────────────────
+    wp_enqueue_script('smooth-scroll', $uri . '/assets/js/vendor/smooth-scroll.min.js', [], '16.1.3', true);
+
+    // ── JS Modules ───────────────────────────────────────────────────────────
+    $modules = [
+        'Cookie', 'Utilities', 'Global', 'Header', 'SingleProduct', 'Search',
+        'Favorites', 'Login', 'PageHero', 'Sale', 'SkinCareAddition',
+        'RefillAddToCart', 'BrandPartner', 'AmbassadorEnrollment',
+        'ArchivePodcasts', 'ArchiveProducts', 'Giving', 'TemplateHome',
+        'TemplatePress', 'TemplateFAQ', 'TemplateTrylacel', 'MyAccount',
+        'Form', 'EmailSubscribe', 'WoocommerceSubscription',
+        'WoocommerceSubscriptionSearch', 'ProductReviewModel',
+        'ProductPurchaseOptions', 'CheckoutWC',
+    ];
+    foreach ($modules as $module) {
+        wp_enqueue_script("radical/{$module}", $uri . "/assets/js/modules/{$module}.js", ['jquery', 'bootstrap-js'], '2.0.0', true);
+    }
+
     // ── Theme JS ─────────────────────────────────────────────────────────────
-    wp_enqueue_script('radical/main', $uri . '/assets/js/main.js', ['jquery', 'bootstrap-js'], '2.0.0', true);
+    wp_enqueue_script('radical/main', $uri . '/assets/js/main.js', ['jquery', 'bootstrap-js', 'smooth-scroll'], '2.0.0', true);
 
     // ── Localize ─────────────────────────────────────────────────────────────
     $is_logged_in = is_user_logged_in();
