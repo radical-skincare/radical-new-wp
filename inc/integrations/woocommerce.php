@@ -266,76 +266,9 @@ add_filter('woocommerce_get_availability', function ($availability, $_product) {
     // Only display the waitlist message once per page load
     // For variable products, this prevents duplicate output when checking multiple variations
     if (!$waitlist_displayed) {
-      $title = get_the_title();
-      $sold_out_product_waitlist = get_field('sold_out_product_waitlist', 'option');
-      /*
-      $mailchimpProductGroups = [
-        [
-          'value' => '1',
-          'title' => 'Anti-Aging Restorative Moisture 50mL'
-        ],
-        [
-          'value' => '2',
-          'title' => 'Skin Perfecting Screen SPF 30 40mL'
-        ],
-        [
-          'value' => '4',
-          'title' => 'Multi Brightening Serum 30mL'
-        ],
-        // [ // Not in circulation anymore
-        //   'value' => '8',
-        //   'title' => 'Firming Body Multi-Repair'
-        // ],
-        [
-          'value' => '16',
-          'title' => 'Hydrating Cleanser 120mL'
-        ],
-        [
-          'value' => '64',
-          'title' => 'Eye Revive Creme Sachet (10 Pack)'
-        ],
-        [
-          'value' => '32',
-          'title' => 'Anti-Aging Restorative Moisture Sachet (10 Pack)'
-        ],
-      ];
-      */
-      if ($sold_out_product_waitlist && isset($sold_out_product_waitlist['product_group_values'])) {
-        $product_group_values = $sold_out_product_waitlist['product_group_values'];
-        ?>
-        <div class="alert alert-danger mr-3">
-          <span class="fa fa-exclamation-triangle"></span> <strong>Sold Out.</strong> Get notified when we're back in stock.
-        </div>
-        <!-- <h3>Get Notified When We Are Back In Stock</h3> -->
-        <form action="https://radicalskincare.us16.list-manage.com/subscribe/post?u=f6a7eed3c5d0780cd330a0384&amp;id=28aeed1b30" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div style="display: none;">
-            <label for="mce-group[5695]">Product</label>
-            <select name="group[5695]" class="REQ_CSS" id="mce-group[5695]">
-              <option value=""></option>
-              <?php foreach ($product_group_values as $productGroup) { ?>
-                <option value="<?php echo $productGroup['value']; ?>" <?php echo ($productGroup['title'] === $title) ? 'selected' : ''; ?>><?php echo $productGroup['title']; ?></option>
-              <?php } ?>
-            </select>
-          </div>
-          <div class="d-flex align-items-center row mr-0 mb-3">
-            <div class="col">
-              <div class="form-outline">
-                <label for="mce-EMAIL">Email Address</label>
-                <input id="mce-EMAIL" type="email" name="EMAIL" class="form-control" required />
-              </div>
-            </div>
-            <div class="col-auto">
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_f6a7eed3c5d0780cd330a0384_28aeed1b30" tabindex="-1">
-              </div>
-              <button id="mc-embedded-subscribe" type="submit" value="Subscribe" name="subscribe" class="btn btn-darkergray m-0">Join Waitlist</button>
-            </div>
-          </div>
-        </form>
-      <?php
+      if (function_exists('radical_render_sold_out_waitlist_form')) {
+        radical_render_sold_out_waitlist_form($_product);
       }
-      // Mark as displayed to prevent duplicate output
       $waitlist_displayed = true;
     }
   } else {
@@ -779,6 +712,49 @@ add_filter('woocommerce_subscription_use_pending_cancel', function ($args) {
 add_filter('woocommerce_product_get_rating_html', function($html, $rating, $count) {
   return '<div class="write_a_review_container">' . $html . '<a href="#reviews" class="write_a_review_container-click">Write a Review</a></div>';
 }, 10, 3);
+
+/**
+ * Restrict product reviews to verified buyers and enforce a 100-character minimum.
+ * Mirrors the template gate so direct POSTs to wp-comments-post.php cannot bypass it.
+ */
+define('RADICAL_REVIEW_MIN_CHARS', 100);
+
+add_filter('preprocess_comment', function ($commentdata) {
+  if (empty($commentdata['comment_post_ID']) || get_post_type($commentdata['comment_post_ID']) !== 'product') {
+    return $commentdata;
+  }
+  $user_id = get_current_user_id();
+  if (!$user_id) {
+    wp_die(
+      esc_html__('You must be logged in and have purchased this product to leave a review.', 'sage'),
+      esc_html__('Review not allowed', 'sage'),
+      ['response' => 403, 'back_link' => true]
+    );
+  }
+  $user = get_userdata($user_id);
+  $email = $user ? $user->user_email : '';
+  if (!wc_customer_bought_product($email, $user_id, (int)$commentdata['comment_post_ID'])) {
+    wp_die(
+      esc_html__('Only verified buyers of this product may leave a review.', 'sage'),
+      esc_html__('Review not allowed', 'sage'),
+      ['response' => 403, 'back_link' => true]
+    );
+  }
+  $comment_length = function_exists('mb_strlen')
+    ? mb_strlen(trim(wp_strip_all_tags($commentdata['comment_content'] ?? '')))
+    : strlen(trim(wp_strip_all_tags($commentdata['comment_content'] ?? '')));
+  if ($comment_length < RADICAL_REVIEW_MIN_CHARS) {
+    wp_die(
+      sprintf(
+        esc_html__('Your review must be at least %d characters long.', 'sage'),
+        RADICAL_REVIEW_MIN_CHARS
+      ),
+      esc_html__('Review too short', 'sage'),
+      ['response' => 400, 'back_link' => true]
+    );
+  }
+  return $commentdata;
+}, 10, 1);
 
 /**
  * Cart - Limit Specific Product to 1 Cart Item Quantity

@@ -24,9 +24,12 @@ if ( ! comments_open() ) {
 }
 
 $count = $product->get_review_count();
+$current_user_id = get_current_user_id();
+$current_user = $current_user_id ? get_userdata( $current_user_id ) : null;
+$is_verified_buyer = $current_user_id && wc_customer_bought_product( $current_user ? $current_user->user_email : '', $current_user_id, $product->get_id() );
 ?>
 <div class="woocommerce-Reviews">
-  <?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
+  <?php if ( $is_verified_buyer ) : ?>
     <div class="container py-5">
       <div id="review_form_wrapper" class="row justify-content-center">
         <div id="review_form" class="col-lg-10">
@@ -92,7 +95,7 @@ $count = $product->get_review_count();
             </select></div>';
           }
 
-          $comment_form['comment_field'] .= '<div class="comment-form-comment form-outline mb-3"><label for="comment">' . esc_html__( 'Your Review', 'woocommerce' ) . '</label><textarea id="comment" name="comment" class="form-control" cols="45" rows="8" required></textarea></div>';
+          $comment_form['comment_field'] .= '<div class="comment-form-comment form-outline mb-3"><label for="comment">' . esc_html__( 'Your Review', 'woocommerce' ) . '</label><textarea id="comment" name="comment" class="form-control" cols="45" rows="8" minlength="100" required aria-describedby="comment-min-length"></textarea><small id="comment-min-length" class="form-text text-muted">' . esc_html__( 'Please share at least 100 characters about your experience.', 'sage' ) . '</small></div>';
 
           comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
           ?>
@@ -101,7 +104,18 @@ $count = $product->get_review_count();
     </div>
 	<?php else : ?>
 		<p class="woocommerce-verification-required">
-      <?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'woocommerce' ); ?>
+      <?php if ( ! $current_user_id ) : ?>
+        <?php
+          $account_page_url = wc_get_page_permalink( 'myaccount' );
+          printf(
+            esc_html__( 'You must be %1$slogged in%2$s and have purchased this product to leave a review.', 'sage' ),
+            $account_page_url ? '<a href="' . esc_url( $account_page_url ) . '">' : '',
+            $account_page_url ? '</a>' : ''
+          );
+        ?>
+      <?php else : ?>
+        <?php esc_html_e( 'Only verified buyers of this product may leave a review.', 'sage' ); ?>
+      <?php endif; ?>
     </p>
   <?php endif; ?>
 	<div class="clear"></div>
