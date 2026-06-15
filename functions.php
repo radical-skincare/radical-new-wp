@@ -33,9 +33,11 @@ add_action('admin_menu', function () {
 require_once get_template_directory() . '/inc/admin/vip-customers.php';
 require_once get_template_directory() . '/inc/admin/gigfiliate-wp.php';
 require_once get_template_directory() . '/inc/admin/woocommerce.php';
+require_once get_template_directory() . '/inc/admin/sold-out-waitlist.php';
 
 // Integrations
 require_once get_template_directory() . '/inc/integrations/woocommerce.php';
+require_once get_template_directory() . '/inc/integrations/sold-out-waitlist.php';
 require_once get_template_directory() . '/inc/integrations/sitewide-discounts.php';
 require_once get_template_directory() . '/inc/integrations/threshold-discount.php';
 require_once get_template_directory() . '/inc/integrations/gigfiliate.php';
