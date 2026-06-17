@@ -1,8 +1,10 @@
 <?php
 
-// Ensure WooCommerce is active
+// Ensure WooCommerce is active. functions.php only loads this file when
+// WooCommerce is present, so this is a defensive guard; bail quietly rather
+// than echoing output during the bootstrap (the theme shows a central
+// admin notice when WooCommerce is missing).
 if (!class_exists('WooCommerce')) {
-    echo '<div class="notice notice-error"><p>WooCommerce is not active.</p></div>';
     return;
 }
 
