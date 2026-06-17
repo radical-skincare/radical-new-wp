@@ -73,5 +73,8 @@ add_action( 'rest_api_init', function () {
   register_rest_route( 'radical/v1', '/yotpo', array(
     'methods' => 'POST',
     'callback' => 'radical_yotpo_rest_api_response',
+    // Public webhook: Yotpo's servers POST review data here and cannot
+    // authenticate as a WordPress user, so the route must stay open.
+    'permission_callback' => '__return_true',
   ) );
 } );

@@ -594,11 +594,21 @@ add_action('cfw_before_customer_info_tab_login', function() {
 
 /**
  * Travel Kit Discount
+ *
+ * Deferred to init: get_field() is not available at theme-load time (ACF
+ * registers its API on a later hook), so calling it at file scope fataled.
+ * conditional-product-sale.php only registers hooks that fire on front-end
+ * requests, so loading it on init is early enough.
  */
-$conditional_product_sale = get_field('conditional_product_sale', 'option');
-if (isset($conditional_product_sale['enable']) && $conditional_product_sale['enable']) {
-  require_once(get_template_directory() . '/inc/integrations/woocommerce/conditional-product-sale.php');
-}
+add_action('init', function () {
+  if (!function_exists('get_field')) {
+    return;
+  }
+  $conditional_product_sale = get_field('conditional_product_sale', 'option');
+  if (isset($conditional_product_sale['enable']) && $conditional_product_sale['enable']) {
+    require_once(get_template_directory() . '/inc/integrations/woocommerce/conditional-product-sale.php');
+  }
+});
 
 /**
  * Log Invalid Recurring Shipping Method Error

@@ -73,7 +73,9 @@ add_action( 'rest_api_init', function () {
     'methods'  => 'GET',
     // Here we register our callback. The callback is fired when this endpoint is matched by the WP_REST_Server class.
     'callback' => 'radical_skincare_ambassadors',
-    // 'args' => array( 
+    // Public read: the ambassador directory is consumed by the front-end.
+    'permission_callback' => '__return_true',
+    // 'args' => array(
     // ),
   ));
 });
