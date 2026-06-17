@@ -296,6 +296,11 @@ function register_vip_bulk_promotion_endpoint()
     array(
       'methods' => 'POST',
       'callback' => 'bulk_promote_active_subscribers',
+      // Admin-only: this bulk-promotes user roles, so require the same
+      // capability as the VIP Customers admin page.
+      'permission_callback' => function () {
+        return current_user_can('manage_woocommerce');
+      },
       'args' => array(
         'dry_run' => array(
           'type' => 'boolean',

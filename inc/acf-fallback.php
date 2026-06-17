@@ -20,10 +20,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-// If ACF is active, get_field() exists and we leave everything to the plugin.
-if (function_exists('get_field')) {
-    return;
-}
+// This file is only included by functions.php when ACF is NOT active
+// (gated with class_exists('ACF')), so it simply declares safe stubs.
 
 if (!function_exists('get_field')) {
     function get_field($selector = '', $post_id = false, $format_value = true)

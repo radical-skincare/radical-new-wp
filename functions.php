@@ -3,9 +3,18 @@
  * Radical Skincare Theme Functions
  */
 
-// ACF fallback shims — must load before anything that calls get_field() etc.,
-// so a missing ACF plugin degrades gracefully instead of fataling.
-require_once get_template_directory() . '/inc/acf-fallback.php';
+// ACF fallback shims — only when ACF is neither loaded nor installed. We check
+// the filesystem, not just class_exists('ACF'): during ACF's own activation the
+// theme loads before ACF is in the class table, so a class_exists check would
+// declare get_field() and then fatally collide with ACF's own declaration. If
+// the plugin files exist, stay out of the way and let ACF own its functions.
+$radical_acf_present = class_exists('ACF')
+    || file_exists(WP_PLUGIN_DIR . '/advanced-custom-fields-pro/acf.php')
+    || file_exists(WP_PLUGIN_DIR . '/advanced-custom-fields/acf.php');
+if (!$radical_acf_present) {
+    require_once get_template_directory() . '/inc/acf-fallback.php';
+}
+unset($radical_acf_present);
 
 // Setup & enqueue
 require_once get_template_directory() . '/inc/setup.php';
@@ -66,7 +75,11 @@ if (class_exists('WooCommerce')) {
     require_once get_template_directory() . '/inc/integrations/woocommerce.php';
     require_once get_template_directory() . '/inc/integrations/sitewide-discounts.php';
     require_once get_template_directory() . '/inc/integrations/threshold-discount.php';
-    require_once get_template_directory() . '/inc/integrations/wc-subscriptions.php';
+    // Note: wc-subscriptions.php is intentionally NOT required here. It defines a
+    // class that extends WC_Email, which WooCommerce loads lazily (long after the
+    // theme loads), so requiring it now fatals with "Class WC_Email not found".
+    // It is loaded on demand inside the woocommerce_email_classes filter in
+    // inc/integrations/woocommerce/subscription-reminder-email.php.
 } else {
     add_action('admin_notices', function () {
         if (!current_user_can('activate_plugins')) {
