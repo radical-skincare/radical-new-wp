@@ -4,8 +4,9 @@ $template_directory_uri = get_template_directory_uri();
 $site_name = get_bloginfo('name');
 ?>
 <style>
-.footer_brand-logo {
+.main-footer .footer_brand-logo {
   height: 4rem;
+  object-fit: contain;
   margin-bottom: 1rem;
 }
 </style>
