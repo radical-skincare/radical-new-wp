@@ -30,6 +30,7 @@ require_once get_template_directory() . '/inc/admin/acf.php';
 require_once get_template_directory() . '/inc/admin/podcasts.php';
 require_once get_template_directory() . '/inc/admin/press-items.php';
 require_once get_template_directory() . '/inc/admin/stories.php';
+require_once get_template_directory() . '/inc/admin/migrate-page-templates.php';
 // Brand Partner admin settings page — loaded only as admin_menu callback
 add_action('admin_menu', function () {
     add_submenu_page(

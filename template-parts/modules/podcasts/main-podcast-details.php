@@ -1,5 +1,5 @@
 <?php
-$main_podcast = ArchivePodcasts::getPodcasts('all', 1);
+$main_podcast = radical_get_podcasts('all', 1);
 ?>
 <section id="main-podcast" class="card card-main-podcast main-podcast">
   <div id="main-podcast_loader-wrap" class="radical-loader-wrap">

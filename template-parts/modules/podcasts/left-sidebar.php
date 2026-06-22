@@ -3,7 +3,7 @@
     <?php get_template_part('template-parts/components/loader'); ?>
   </div>
   <div id="podcasts-left-sidebar_listing" post-per-page="<?php echo esc_attr(get_option( 'posts_per_page' )); ?>" offset="0">
-    <?php if ($podcasts = ArchivePodcasts::getPodcasts('all', (int)get_option( 'posts_per_page' ))) : ?>
+    <?php if ($podcasts = radical_get_podcasts('all', (int)get_option( 'posts_per_page' ))) : ?>
       <?php foreach ($podcasts['podcasts'] as $podcast) : ?>
         <?php get_template_part('template-parts/content/podcast-item'); ?>
       <?php endforeach; ?>
