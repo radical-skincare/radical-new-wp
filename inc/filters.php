@@ -20,6 +20,22 @@ add_filter('body_class', function (array $classes) {
         return preg_replace(['/-blade(-php)?$/', '/^page-template-views/'], '', $class);
     }, $classes);
 
+    /**
+     * Add a bare "template-{name}" class (e.g. "template-home") matching the
+     * flat template filename. The old Sage theme stored templates as
+     * "views/template-home.blade.php" and the regex above stripped that down
+     * to "template-home" for the JS modules (TemplateHome.js, etc.) to key
+     * off of. Flat filenames like "template-home.php" have no "-blade"
+     * segment, so that regex never fires here — add the bare class directly.
+     */
+    $template_slug = get_page_template_slug();
+    if ($template_slug) {
+        $bare_template_class = basename($template_slug, '.php');
+        if (!in_array($bare_template_class, $classes)) {
+            $classes[] = $bare_template_class;
+        }
+    }
+
     return array_filter($classes);
 });
 

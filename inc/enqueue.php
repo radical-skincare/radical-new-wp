@@ -29,6 +29,13 @@ add_action('wp_enqueue_scripts', function () {
     }
     wp_enqueue_script('bootstrap-js', $uri . '/assets/js/vendor/bootstrap.bundle.min.js', ['jquery'], '4.3.1', true);
 
+    // Some plugins (e.g. WP Loyalty Rules) call jQuery.noConflict() on the
+    // frontend, which unsets the global `$`. Our module files reference bare
+    // `$` directly (no bundler to scope it locally), so restore it here, right
+    // before our own scripts enqueue — this runs after any earlier-priority
+    // plugin script that may have called noConflict().
+    wp_add_inline_script('bootstrap-js', 'window.$ = jQuery;', 'after');
+
     // ── Smooth Scroll ────────────────────────────────────────────────────────
     wp_enqueue_script('smooth-scroll', $uri . '/assets/js/vendor/smooth-scroll.min.js', [], '16.1.3', true);
 
