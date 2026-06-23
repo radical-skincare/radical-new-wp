@@ -30,10 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         $product = get_post( $upsell->get_id() );
         ?>
         <div class="col-lg-3 mb-3 mb-lg-0">
-          <?php
-          set_query_var('product', $product);
-          get_template_part('template-parts/content-product');
-          ?>
+          <?php get_template_part('template-parts/content-product', null, ['product' => $product]); ?>
         </div>
       <?php endforeach; ?>
     </div>

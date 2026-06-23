@@ -1,6 +1,6 @@
 <?php
 global $post;
-$product = $post;
+$product = $args['product'] ?? $post;
 $wc_product = wc_get_product( $product->ID );
 if (!$wc_product) {
   error_log('General Product not found: '.$product->ID);
