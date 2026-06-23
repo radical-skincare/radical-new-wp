@@ -1,7 +1,7 @@
 <?php if ($intro = get_field('intro')) : ?>
   <?php
-  $desc = $intro['description'];
-  $video_id = $intro['video_id'];
+  $desc = $intro['description'] ?? null;
+  $video_id = $intro['video_id'] ?? null;
   ?>
   <section class="intro py-5">
     <div class="container position-relative bg-lightestgray py-5 rounded mt-4">

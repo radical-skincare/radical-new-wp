@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
         <?php if ($heading = $selection_process['heading']) : ?>
-          <h2 class="<?php echo !$desc ? 'mb-0' : 'mb-4'; ?>"><?php echo $heading; ?></h2>
+          <h2 class="<?php echo empty($selection_process['content']) ? 'mb-0' : 'mb-4'; ?>"><?php echo $heading; ?></h2>
         <?php endif; ?>
         <?php if ($content = $selection_process['content']) : ?>
           <div>
