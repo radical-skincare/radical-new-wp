@@ -1,4 +1,5 @@
 <?php
+$order_id = $args['order_id'];
 $have_renewal_gift = get_post_meta($order_id, 'have_renewal_gift', true);
 $renewal_gift_product = get_post_meta($order_id, 'product', true);
 ?>

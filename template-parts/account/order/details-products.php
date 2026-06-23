@@ -1,4 +1,6 @@
 <?php
+$order = $args['order'];
+$order_id = $args['order_id'];
 do_action( 'woocommerce_order_details_before_order_table_items', $order );
 $have_renewal_gift = get_post_meta($order->get_ID(), 'have_renewal_gift', true);
 $gift_product = get_post_meta($order->get_ID(), 'product', true);

@@ -1,4 +1,6 @@
 <?php
+$order = $args['order'];
+$order_id = $args['order_id'];
 $subscriptions = wcs_get_subscriptions_for_order( $order, array( 'order_type' => 'any' ) );
 $downloads = $order->get_downloadable_items();
 $show_downloads = $order->has_downloadable_item() && $order->is_download_permitted();
@@ -16,7 +18,7 @@ $show_downloads = $order->has_downloadable_item() && $order->is_download_permitt
       </div>
       <div aria-labelledby="orderRelatedSubscriptionsCollapseHeading" class="collapse show" data-parent="#orderDetailsAccordion" id="orderRelatedSubscriptionsCollapse">
         <div class="accordion-item_body text-dark-gray p-3">
-          <?php get_template_part('template-parts/account/order/related-subscriptions', null, ['subscriptions' => $subscriptions]); ?>
+          <?php get_template_part('template-parts/account/order/related-subscriptions', null, ['order_id' => $order_id, 'subscriptions' => $subscriptions]); ?>
         </div>
       </div>
     </div>

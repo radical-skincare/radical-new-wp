@@ -1,3 +1,4 @@
+<?php $order = $args['order']; ?>
 <table class="w-100 mb-3">
   <tbody class="w-100">
     <?php foreach ($order->get_order_item_totals() as $key => $total) : ?>

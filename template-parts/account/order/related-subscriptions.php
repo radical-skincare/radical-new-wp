@@ -1,4 +1,6 @@
 <?php
+$order_id = $args['order_id'];
+$subscriptions = $args['subscriptions'];
 if (class_exists('WC_Subscriptions_Core_Plugin')) {
   wc_get_template(
     'myaccount/related-subscriptions.php',

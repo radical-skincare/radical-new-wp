@@ -36,38 +36,15 @@ $show_customer_details = is_user_logged_in() && $order->get_user_id() === $curre
   </div>
   <div class="row">
     <div class="col-lg-8">
-      <?php
-      set_query_var('order', $order);
-      set_query_var('order_id', $order_id);
-      get_template_part('template-parts/account/order/details-products');
-      ?>
-      <?php
-      set_query_var('order', $order);
-      set_query_var('order_id', $order_id);
-      get_template_part('template-parts/account/order/accordion');
-      ?>
-      <?php
-      set_query_var('order', $order);
-      set_query_var('order_id', $order_id);
-      get_template_part('template-parts/account/order/card-free-gift');
-      ?>
+      <?php get_template_part('template-parts/account/order/details-products', null, ['order' => $order, 'order_id' => $order_id]); ?>
+      <?php get_template_part('template-parts/account/order/accordion', null, ['order' => $order, 'order_id' => $order_id]); ?>
+      <?php get_template_part('template-parts/account/order/card-free-gift', null, ['order' => $order, 'order_id' => $order_id]); ?>
     </div>
     <div class="col-lg-4">
-      <?php
-      set_query_var('order', $order);
-      get_template_part('template-parts/account/order/totals-table');
-      ?>
+      <?php get_template_part('template-parts/account/order/totals-table', null, ['order' => $order]); ?>
       <?php if ($show_customer_details) : ?>
-        <?php
-        set_query_var('order', $order);
-        set_query_var('type', 'billing');
-        get_template_part('template-parts/account/address-card');
-        ?>
-        <?php
-        set_query_var('order', $order);
-        set_query_var('type', 'shipping');
-        get_template_part('template-parts/account/address-card');
-        ?>
+        <?php get_template_part('template-parts/account/address-card', null, ['order' => $order, 'type' => 'billing']); ?>
+        <?php get_template_part('template-parts/account/address-card', null, ['order' => $order, 'type' => 'shipping']); ?>
       <?php endif; ?>
     </div>
   </div>
