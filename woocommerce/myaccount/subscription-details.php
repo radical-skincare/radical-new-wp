@@ -57,5 +57,6 @@ $gig_ordered_by = get_post_meta($subscription_id, 'gig_ordered_by', true);
 <?php endif; ?>
 <?php
 set_query_var('status', $status);
+set_query_var('subscription', $subscription);
 get_template_part('template-parts/account/subscription/card-details');
 ?>
