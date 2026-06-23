@@ -69,11 +69,11 @@ do_action( 'woocommerce_before_account_payment_methods', $has_methods );
     <?php foreach ($saved_methods as $methods) : ?>
       <?php foreach ($methods as $method) : ?>
         <div class="col-lg-6 d-flex">
-          <?php
-          set_query_var('method', $method);
-          set_query_var('payment_methods_names', $payment_methods_names);
-          get_template_part('template-parts/account/payment/method-card');
-          ?>
+          <?php get_template_part('template-parts/account/payment/method-card', null, [
+            'method'                => $method,
+            'payment_methods_names' => $payment_methods_names,
+            'current_user_id'       => $current_user_id,
+          ]); ?>
         </div>
       <?php endforeach; ?>
     <?php endforeach; ?>

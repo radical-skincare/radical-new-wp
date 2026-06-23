@@ -1,5 +1,8 @@
 
 <?php
+$method = $args['method'];
+$payment_methods_names = $args['payment_methods_names'];
+$current_user_id = $args['current_user_id'];
 $method_id = $method['method']['last4'] . '_' . str_replace('/', '-', $method['expires']);
 ?>
 <div id="method_<?php echo esc_html($method_id); ?>" class="card card-method mb-3 w-100">
@@ -8,7 +11,8 @@ $method_id = $method['method']['last4'] . '_' . str_replace('/', '-', $method['e
       <div class="col-2 pr-0">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/cards/' . str_replace(' ', '-', strtolower($method['method']['brand'])) . '.svg'; ?>" alt="<?php echo esc_html($method['method']['brand']); ?>" class="w-100"/>
       </div>
-      <div class="card-method_details <?php echo (count($method['actions']) > 1 || $method['actions'][0]['name'] == 'Delete') ? 'col-5' : 'col-auto'; ?>">
+      <?php $first_action = !empty($method['actions']) ? reset($method['actions']) : null; ?>
+      <div class="card-method_details <?php echo (count($method['actions']) > 1 || ($first_action && $first_action['name'] == 'Delete')) ? 'col-5' : 'col-auto'; ?>">
         <?php if ($payment_methods_names) : ?>
           <?php if ($method_name = radical_get_payment_method_name_by_id($method_id, $current_user_id, $payment_methods_names)) : ?>
             <h3 class="method-name mb-1"><?php echo $method_name; ?></h3>
