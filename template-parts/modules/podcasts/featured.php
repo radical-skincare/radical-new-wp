@@ -25,7 +25,7 @@ $featured_podcasts = get_posts([
     <div id="featured-podcasts-carousel" class="owl-carousel">
       <?php foreach ($featured_podcasts as $podcast) : ?>
         <div class="mx-2 mx-lg-4">
-          <?php get_template_part('template-parts/content/podcast-item'); ?>
+          <?php get_template_part('template-parts/content/podcast-item', null, ['podcast' => $podcast, 'is_carousel' => true]); ?>
         </div>
       <?php endforeach; ?>
     </div>

@@ -1,3 +1,7 @@
+<?php
+$podcast = $args['podcast'];
+$is_carousel = $args['is_carousel'] ?? false;
+?>
 <?php if (is_object($podcast)) : ?>
 <?php
 $start_date = get_field('start_date', $podcast->ID);

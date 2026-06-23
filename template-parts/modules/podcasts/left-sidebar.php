@@ -5,7 +5,7 @@
   <div id="podcasts-left-sidebar_listing" post-per-page="<?php echo esc_attr(get_option( 'posts_per_page' )); ?>" offset="0">
     <?php if ($podcasts = radical_get_podcasts('all', (int)get_option( 'posts_per_page' ))) : ?>
       <?php foreach ($podcasts['podcasts'] as $podcast) : ?>
-        <?php get_template_part('template-parts/content/podcast-item'); ?>
+        <?php get_template_part('template-parts/content/podcast-item', null, ['podcast' => $podcast, 'is_carousel' => false]); ?>
       <?php endforeach; ?>
       <?php if (count($podcasts['podcasts']) < $podcasts['total_podcasts']) : ?>
         <a href="javascript:void(0)" id="load_more_podcasts" class="d-block link-underline link-underline_darker-gray mx-auto" style="width: fit-content;">Load More</a>
