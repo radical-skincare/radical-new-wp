@@ -1,3 +1,7 @@
+<?php
+$image = $args['image'];
+$content = $args['content'];
+?>
 <section class="intro py-5">
   <div class="container position-relative bg-lightestgray pt-5 mt-4 pb-5">
     <div class="d-block border border-1 border-dark my-4 mr-auto ml-auto vertical-line"></div>

@@ -8,9 +8,10 @@ get_header(); ?>
   <?php while (have_posts()) : the_post(); ?>
     <?php get_template_part('template-parts/hero/hero-image-right'); ?>
     <?php if ($intro = get_field('intro')) :
-      $image = $intro['image'];
-      $content = $intro['content'];
-      get_template_part('template-parts/modules/join-brand-partners/intro');
+      get_template_part('template-parts/modules/join-brand-partners/intro', null, [
+        'image' => $intro['image'],
+        'content' => $intro['content'],
+      ]);
     endif; ?>
     <?php get_template_part('template-parts/modules/join-brand-partners/how-it-works'); ?>
     <?php get_template_part('template-parts/modules/join-brand-partners/getting-started'); ?>
