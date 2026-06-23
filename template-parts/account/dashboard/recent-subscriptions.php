@@ -1,5 +1,7 @@
 
 <?php
+$current_user_id = $args['current_user_id'];
+$site_url = $args['site_url'];
 $args = [
   'customer_id' => $current_user_id,
   'subscription_status' => ['wc-active', 'wc-cancelled', 'wc-on-hold'],

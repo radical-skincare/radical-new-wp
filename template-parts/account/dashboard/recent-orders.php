@@ -1,5 +1,7 @@
 
 <?php
+$current_user_id = $args['current_user_id'];
+$site_url = $args['site_url'];
 $args = [
   'numberposts' => '3',
   'meta_key' => '_customer_user',

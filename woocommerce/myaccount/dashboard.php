@@ -70,8 +70,8 @@ foreach ($saved_payment_methods as $saved_payment_method) {
     do_action('woocommerce_after_my_account');
     ?>
     <?php echo do_shortcode('[gigfiliate_your_shopping_with]'); ?>
-    <?php get_template_part('template-parts/account/dashboard/recent-orders'); ?>
-    <?php get_template_part('template-parts/account/dashboard/recent-subscriptions'); ?>
+    <?php get_template_part('template-parts/account/dashboard/recent-orders', null, ['current_user_id' => $current_user_id, 'site_url' => $site_url]); ?>
+    <?php get_template_part('template-parts/account/dashboard/recent-subscriptions', null, ['current_user_id' => $current_user_id, 'site_url' => $site_url]); ?>
     <?php include get_template_directory() . '/woocommerce/myaccount/dashboard/coupons.php'; ?>
   </div>
   <div class="col-lg-4">
