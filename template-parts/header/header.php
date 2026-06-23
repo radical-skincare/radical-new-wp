@@ -272,5 +272,5 @@ $is_active_affiliate = ($is_user_logged_in && function_exists('gigfiliate_is_act
 </div>
 <?php get_template_part('template-parts/header/search'); ?>
 <?php get_template_part('template-parts/header/favorites'); ?>
-<?php get_template_part('template-parts/modal/login'); ?>
+<?php get_template_part('template-parts/modal/login', null, ['is_user_logged_in' => $is_user_logged_in]); ?>
 <?php /* get_template_part('template-parts/header/cyber-monday'); */ ?>

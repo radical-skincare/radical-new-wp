@@ -1,4 +1,11 @@
 
+<?php
+$site_url        = $args['site_url'] ?? get_site_url();
+$action          = $args['action'] ?? admin_url('admin-ajax.php');
+$form_id         = $args['form_id'] ?? 'login_form';
+$input_prefix    = $args['input_prefix'] ?? 'login_form';
+$submit_btn_text = $args['submit_btn_text'] ?? 'Log In';
+?>
 <div class="position-relative">
   <div id="<?php echo esc_html($form_id); ?>_loader" class="form-loader text-center" style="display: none;">
     <div class="loader"></div>
