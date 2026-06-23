@@ -59,12 +59,7 @@ $subscriptions = wcs_get_subscriptions_for_order( $order, array( 'order_type' =>
       <?php endif; ?>
     </div>
   </div>
-  <?php
-  set_query_var('order', $order);
-  set_query_var('order_id', $order_id);
-  set_query_var('subscriptions', $subscriptions);
-  get_template_part('template-parts/account/order/details');
-  ?>
+  <?php get_template_part('template-parts/account/order/details', null, ['order' => $order, 'order_id' => $order_id]); ?>
   <?php
     do_action( 'woocommerce_view_order', $order_id );
   ?>

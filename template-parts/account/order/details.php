@@ -1,5 +1,7 @@
 
 <?php
+$order = $args['order'];
+$order_id = $args['order_id'];
 $gigfiliate_settings = json_decode(get_option('gigfiliate_settings'));
 // customer is already logged in
 $current_user_id = get_current_user_id();
