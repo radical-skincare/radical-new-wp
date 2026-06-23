@@ -1,3 +1,4 @@
+<?php $order = $args['order']; ?>
 <section class="order-details__cards mb-4">
   <div class="card mb-3">
     <div class="card-body">

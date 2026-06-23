@@ -41,8 +41,7 @@ defined( 'ABSPATH' ) || exit;
 
 			<h1 class="text-center my-2"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h1>
       <?php
-      set_query_var('order', $order);
-      get_template_part('template-parts/checkout/thankyou/card-details');
+      get_template_part('template-parts/checkout/thankyou/card-details', null, ['order' => $order]);
       ?>
 
 		<?php endif; ?>
