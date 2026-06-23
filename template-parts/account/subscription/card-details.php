@@ -1,6 +1,7 @@
 
 <?php
-$status = $subscription->get_status();
+$subscription = $args['subscription'];
+$status = $args['status'] ?? $subscription->get_status();
 ?>
 <section class="subscription-details mb-4">
   <div class="card mb-3">
