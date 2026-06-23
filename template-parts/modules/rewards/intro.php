@@ -1,3 +1,9 @@
+<?php
+$divider_text = $args['divider_text'];
+$image = $args['image'];
+$heading = $args['heading'];
+$content = $args['content'];
+?>
 <section class="intro py-5">
   <?php if ($divider_text) : ?>
     <div class="container position-relative bg-lightestgray pt-5 mt-4 pb-5">

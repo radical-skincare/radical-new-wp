@@ -1,3 +1,4 @@
+<?php $items = $args['items']; ?>
 <section id="rewards_ways-to-earn" class="container bg-lightestgray py-5 mb-5">
   <div class="row justify-content-center mb-5">
     <div class="col-auto">

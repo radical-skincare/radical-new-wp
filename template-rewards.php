@@ -30,19 +30,23 @@ get_header(); ?>
   <?php while (have_posts()) : the_post(); ?>
     <?php get_template_part('template-parts/hero/hero-image-right'); ?>
     <?php if ($intro = get_field('intro')) :
-      $divider_text = $intro['divider_text'];
-      $image = $intro['image'];
-      $content = $intro['content'];
-      get_template_part('template-parts/modules/rewards/intro');
+      get_template_part('template-parts/modules/rewards/intro', null, [
+        'divider_text' => $intro['divider_text'],
+        'image' => $intro['image'],
+        'heading' => $intro['heading'] ?? null,
+        'content' => $intro['content'],
+      ]);
     endif; ?>
     <?php if ($power_of_sharing = get_field('power_of_sharing')) :
-      $items = $power_of_sharing['items'];
-      get_template_part('template-parts/modules/rewards/power-of-earning');
+      get_template_part('template-parts/modules/rewards/power-of-earning', null, [
+        'items' => $power_of_sharing['items'],
+      ]);
     endif; ?>
     <?php if ($ways_to_earn = get_field('ways_to_earn')) :
-      $divider_text = 'Ways to Earn';
-      $items = $ways_to_earn['items'];
-      get_template_part('template-parts/modules/rewards/ways-to-earn');
+      get_template_part('template-parts/modules/rewards/ways-to-earn', null, [
+        'divider_text' => 'Ways to Earn',
+        'items' => $ways_to_earn['items'],
+      ]);
     endif; ?>
     <?php get_template_part('template-parts/modules/rewards/earning-points'); ?>
     <?php if ($earning_steps = get_field('earning_steps')) : ?>
@@ -69,15 +73,18 @@ get_header(); ?>
       </section>
     <?php endif; ?>
     <?php if ($intro = get_field('how_to_use')) :
-      $divider_text = $intro['divider_text'];
-      $image = $intro['image'];
-      $content = $intro['content'];
-      get_template_part('template-parts/modules/rewards/intro');
+      get_template_part('template-parts/modules/rewards/intro', null, [
+        'divider_text' => $intro['divider_text'],
+        'image' => $intro['image'],
+        'heading' => $intro['heading'] ?? null,
+        'content' => $intro['content'],
+      ]);
     endif; ?>
     <?php if ($using_points = get_field('using_points')) :
-      $divider_text = 'Using Points';
-      $items = $using_points['items'];
-      get_template_part('template-parts/modules/rewards/ways-to-earn');
+      get_template_part('template-parts/modules/rewards/ways-to-earn', null, [
+        'divider_text' => 'Using Points',
+        'items' => $using_points['items'],
+      ]);
     endif; ?>
     <?php get_template_part('template-parts/modules/rewards/faqs'); ?>
     <div class="my-5"></div>
