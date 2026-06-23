@@ -12,13 +12,14 @@ get_header(); ?>
     <?php if ($our_story = get_field('our_story')) : ?>
       <div class="bg-lightergray">
         <?php
-        $img = $our_story['image'];
-        $title = 'OUR RADICAL STORY';
-        $text = $our_story['content'];
-        $image_align = 'right';
-        $subtitle = '';
-        $link = '';
-        get_template_part('template-parts/modules/flex/image-card');
+        get_template_part('template-parts/modules/flex/image-card', null, [
+          'img' => $our_story['image'],
+          'title' => 'OUR RADICAL STORY',
+          'text' => $our_story['content'],
+          'image_align' => 'right',
+          'subtitle' => '',
+          'link' => '',
+        ]);
         ?>
       </div>
     <?php endif; ?>

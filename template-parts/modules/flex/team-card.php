@@ -2,14 +2,12 @@
 /**
  * Team Card Module
  *
- * Expected variables: $image, $name, $role, $bio
- *
- * get_template_part() loads this file inside WordPress's load_template(),
- * a real function — it does not inherit the caller's variables unless they
- * are declared global here (the caller sets these at the top-level/global
- * scope of its own template file).
+ * Expected $args: image, name, role, bio
  */
-global $image, $name, $role, $bio;
+$image = $args['image'] ?? null;
+$name = $args['name'] ?? null;
+$role = $args['role'] ?? null;
+$bio = $args['bio'] ?? null;
 ?>
 <div class="team-member row py-4">
   <?php if ($image) : ?>

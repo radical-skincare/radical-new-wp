@@ -36,15 +36,17 @@
           $text .= '</div>';
           ?>
           <?php
-          $img = $organization['image'];
-          $title = $organization['name'];
-          $image_align = (($key%2) === 0) ? 'right' : 'left';
           $link = isset($organization['link']) && $organization['link'] ? $organization['link'] : false;
-          $link_classes = 'link-underline link-underline_darker-gray';
-          if (isset($organization['image_bg_color'])) {
-            $image_bg_color = $organization['image_bg_color'];
-          }
-          get_template_part('template-parts/modules/flex/image-card');
+          $image_bg_color = isset($organization['image_bg_color']) ? $organization['image_bg_color'] : null;
+          get_template_part('template-parts/modules/flex/image-card', null, [
+            'img' => $organization['image'],
+            'title' => $organization['name'],
+            'text' => $text,
+            'image_align' => (($key%2) === 0) ? 'right' : 'left',
+            'link' => $link,
+            'link_classes' => 'link-underline link-underline_darker-gray',
+            'image_bg_color' => $image_bg_color,
+          ]);
           ?>
           <?php if ($key) : ?>
             <div class="d-block border border-1 border-dark my-4 mr-auto ml-auto vertical-line"></div>

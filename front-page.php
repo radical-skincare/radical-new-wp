@@ -8,50 +8,56 @@
     <?php get_template_part('template-parts/modules/home/about'); ?>
     <?php get_template_part('template-parts/modules/home/image-carousel'); ?>
     <?php if ($scientific_link = get_field('scientific_link')) :
-      $img = $scientific_link['image'];
-      $subtitle = $scientific_link['subheading'];
-      $title = $scientific_link['heading'];
-      $text = $scientific_link['content'];
-      $link = $scientific_link['link'];
-      $image_align = 'left';
-      get_template_part('template-parts/modules/flex/image-card');
+      get_template_part('template-parts/modules/flex/image-card', null, [
+        'img' => $scientific_link['image'],
+        'subtitle' => $scientific_link['subheading'],
+        'title' => $scientific_link['heading'],
+        'text' => $scientific_link['content'],
+        'link' => $scientific_link['link'],
+        'image_align' => 'left',
+      ]);
     endif; ?>
     <?php get_template_part('template-parts/modules/home/trust-us'); ?>
     <?php get_template_part('template-parts/modules/home/products-static'); ?>
     <?php if ($mission = get_field('mission')) :
-      $img = $mission['image'];
-      $title = $mission['heading'];
-      $text = $mission['description'];
-      $image_align = 'right';
-      $subtitle = '';
       $link = '';
       if (isset($mission['link']) && $mission['link']) {
         $link = $mission['link'];
       }
-      get_template_part('template-parts/modules/flex/image-card');
+      get_template_part('template-parts/modules/flex/image-card', null, [
+        'img' => $mission['image'],
+        'title' => $mission['heading'],
+        'text' => $mission['description'],
+        'image_align' => 'right',
+        'subtitle' => '',
+        'link' => $link,
+      ]);
     endif; ?>
     <?php get_template_part('template-parts/modules/home/blog'); ?>
     <?php if ($rewards = get_field('rewards')) :
-      $img = $rewards['image'];
-      $title = $rewards['heading'];
-      $text = $rewards['description'];
-      $image_align = 'right';
-      $subtitle = '';
       $link = '';
       if (isset($rewards['link']) && $rewards['link']) {
         $link = $rewards['link'];
       }
-      get_template_part('template-parts/modules/flex/image-card');
+      get_template_part('template-parts/modules/flex/image-card', null, [
+        'img' => $rewards['image'],
+        'title' => $rewards['heading'],
+        'text' => $rewards['description'],
+        'image_align' => 'right',
+        'subtitle' => '',
+        'link' => $link,
+      ]);
     endif; ?>
     <?php get_template_part('template-parts/modules/home/quote'); ?>
     <?php if ($become_a_brand_partner = get_field('become_a_brand_partner')) :
-      $img = $become_a_brand_partner['image'];
-      $subtitle = 'Become A Brand Partner';
-      $title = $become_a_brand_partner['heading'];
-      $text = $become_a_brand_partner['content'];
-      $link = $become_a_brand_partner['link'];
-      $image_align = 'left';
-      get_template_part('template-parts/modules/flex/image-card');
+      get_template_part('template-parts/modules/flex/image-card', null, [
+        'img' => $become_a_brand_partner['image'],
+        'subtitle' => 'Become A Brand Partner',
+        'title' => $become_a_brand_partner['heading'],
+        'text' => $become_a_brand_partner['content'],
+        'link' => $become_a_brand_partner['link'],
+        'image_align' => 'left',
+      ]);
     endif; ?>
     <section class="flex_image-card right-left">
       <div class="container bg-lightestgray py-5 px-lg-5">

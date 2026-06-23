@@ -17,8 +17,10 @@
           'content' => $faq['answer']
         ];
       }
-      $id = 'bp-faq';
-      get_template_part('template-parts/modules/flex/accordion-list');
+      get_template_part('template-parts/modules/flex/accordion-list', null, [
+        'id' => 'bp-faq',
+        'items' => $items,
+      ]);
     ?>
   </section>
 <?php endif; ?>

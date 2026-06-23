@@ -9,7 +9,6 @@
     </div>
   </div>
   <?php
-  $id = 'radical-on-repeat-faq';
   $items = [
     [
       'title' => ' How do I join the Radical on Repeat program? ',
@@ -52,6 +51,9 @@
       'content' => 'Radical on Repeat items will ship automatically until you cancel. By placing this order, you are authorizing Radical Skincare to charge your credit card for future orders at the frequency and quantity you have selected in your account. The actual cost of each shipment may vary depending on the quantity and frequency chosen. Remember: all orders over <span class="woocommerce-Price-currencySymbol">'. get_woocommerce_currency_symbol() .'</span>85 include free shipping! Yay! For any customer service questions, you can email us at <a href="mailto:customercare@radicalskincare.com" target="_blank" rel="noopener">customercare@radicalskincare.com</a>.'
     ],
   ];
-  get_template_part('template-parts/modules/flex/accordion-list');
+  get_template_part('template-parts/modules/flex/accordion-list', null, [
+    'id' => 'radical-on-repeat-faq',
+    'items' => $items,
+  ]);
   ?>
 </section>

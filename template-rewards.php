@@ -57,13 +57,14 @@ get_header(); ?>
       </style>
       <section id="earning-steps">
         <?php foreach ($earning_steps as $key => $step) :
-          $img = $step['image'];
-          $subtitle = '<span class="font-weight-five">STEP ' . radical_number_to_word(($key + 1)) . '</span>';
-          $title = $step['heading'];
-          $text = $step['content'];
-          $link = $step['link'];
-          $image_align = $key % 2 === 0 ? 'right' : 'left';
-          get_template_part('template-parts/modules/flex/image-card');
+          get_template_part('template-parts/modules/flex/image-card', null, [
+            'img' => $step['image'],
+            'subtitle' => '<span class="font-weight-five">STEP ' . radical_number_to_word(($key + 1)) . '</span>',
+            'title' => $step['heading'],
+            'text' => $step['content'],
+            'link' => $step['link'],
+            'image_align' => $key % 2 === 0 ? 'right' : 'left',
+          ]);
         endforeach; ?>
       </section>
     <?php endif; ?>

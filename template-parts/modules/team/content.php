@@ -11,11 +11,12 @@
           ?>
           <?php foreach ($team_group['team_members'] as $key => $team_member) : ?>
             <?php
-            $image = $team_member['image'];
-            $name = $team_member['name'];
-            $role = $team_member['role'];
-            $bio = $team_member['bio'];
-            get_template_part('template-parts/modules/flex/team-card');
+            get_template_part('template-parts/modules/flex/team-card', null, [
+              'image' => $team_member['image'],
+              'name' => $team_member['name'],
+              'role' => $team_member['role'],
+              'bio' => $team_member['bio'],
+            ]);
             ?>
             <?php if (($key + 1) < $team_members_count) : ?>
               <hr class="w-50"/>

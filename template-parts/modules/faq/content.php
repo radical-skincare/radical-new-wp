@@ -41,9 +41,10 @@ $faq_search = (isset($_GET['search'])) ? $_GET['search'] : '';
                 ?>
               <?php endwhile; ?>
               <?php
-              $id = 'faq-accordion';
-              $items = $faqs;
-              get_template_part('template-parts/modules/flex/accordion-list');
+              get_template_part('template-parts/modules/flex/accordion-list', null, [
+                'id' => 'faq-accordion',
+                'items' => $faqs,
+              ]);
               ?>
             <?php endif; ?>
           <?php endwhile; ?>

@@ -2,15 +2,17 @@
 /**
  * Flex Image Card Module
  *
- * Expected variables: $img, $title, $text
- * Optional: $image_align, $subtitle, $link, $link_classes, $image_bg_color
- *
- * get_template_part() loads this file inside WordPress's load_template(),
- * a real function — it does not inherit the caller's variables unless they
- * are declared global here (the caller sets these at the top-level/global
- * scope of its own template file).
+ * Expected $args: img, title, text
+ * Optional $args: image_align, subtitle, link, link_classes, image_bg_color
  */
-global $img, $title, $text, $image_align, $subtitle, $link, $link_classes, $image_bg_color;
+$img = $args['img'] ?? null;
+$title = $args['title'] ?? null;
+$text = $args['text'] ?? null;
+$image_align = $args['image_align'] ?? null;
+$subtitle = $args['subtitle'] ?? null;
+$link = $args['link'] ?? null;
+$link_classes = $args['link_classes'] ?? null;
+$image_bg_color = $args['image_bg_color'] ?? null;
 ?>
 <section class="flex_image-card <?php echo (isset($image_align) && $image_align == 'right') ? 'right-left' : 'left-right'; ?>">
   <div class="container bg-lightestgray py-5 px-lg-5">

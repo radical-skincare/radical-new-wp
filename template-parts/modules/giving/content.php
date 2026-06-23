@@ -42,10 +42,11 @@ $site_url = get_site_url();
 <?php endif; ?>
 <?php if ($by_giving_youre_creating_section = get_field('by_giving_youre_creating_section')) : ?>
   <?php
-  $img = $by_giving_youre_creating_section['image'];
-  $title = $by_giving_youre_creating_section['heading'];
-  $text = $by_giving_youre_creating_section['text'];
-  $image_align = 'left';
-  get_template_part('template-parts/modules/flex/image-card');
+  get_template_part('template-parts/modules/flex/image-card', null, [
+    'img' => $by_giving_youre_creating_section['image'],
+    'title' => $by_giving_youre_creating_section['heading'],
+    'text' => $by_giving_youre_creating_section['text'],
+    'image_align' => 'left',
+  ]);
   ?>
 <?php endif; ?>
