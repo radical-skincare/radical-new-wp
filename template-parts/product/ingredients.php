@@ -1,4 +1,5 @@
 
+<?php $current_user_is_admin = $args['current_user_is_admin']; ?>
 <section id="ingredients" class="my-5">
   <div class="container">
     <h3 class="text-center fs-1.5x mb-3">Featured Ingredients</h3>
