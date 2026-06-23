@@ -119,18 +119,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                   </div>
                 </div>
                 <div class="col-lg-4">
-                  <?php
-                  set_query_var('subscription', $subscription);
-                  set_query_var('type', 'billing');
-                  get_template_part('template-parts/account/address-card');
-                  ?>
+                  <?php get_template_part('template-parts/account/address-card', null, ['subscription' => $subscription, 'type' => 'billing']); ?>
                 </div>
                 <div class="col-lg-4">
-                  <?php
-                  set_query_var('subscription', $subscription);
-                  set_query_var('type', 'shipping');
-                  get_template_part('template-parts/account/address-card');
-                  ?>
+                  <?php get_template_part('template-parts/account/address-card', null, ['subscription' => $subscription, 'type' => 'shipping']); ?>
                 </div>
               </div>
               <div class="list-group mb-3">

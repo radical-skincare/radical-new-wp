@@ -80,29 +80,11 @@ $future_formatted_date = date('F j, Y', strtotime($future_date));
     ?>
   </div>
   <div class="col-lg-4">
-    <?php
-    set_query_var('subscription', $subscription);
-    set_query_var('action_links', $action_links);
-    get_template_part('template-parts/account/subscription/totals-table');
-    ?>
-    <?php
-    set_query_var('subscription', $subscription);
-    set_query_var('action_links', $action_links);
-    get_template_part('template-parts/account/subscription/payment-card');
-    ?>
-    <?php
-    set_query_var('site_url', $site_url);
-    set_query_var('subscription', $subscription);
-    set_query_var('type', 'billing');
-    get_template_part('template-parts/account/address-card');
-    ?>
+    <?php get_template_part('template-parts/account/subscription/totals-table', null, ['subscription' => $subscription]); ?>
+    <?php get_template_part('template-parts/account/subscription/payment-card', null, ['subscription' => $subscription, 'action_links' => $action_links]); ?>
+    <?php get_template_part('template-parts/account/address-card', null, ['site_url' => $site_url, 'subscription' => $subscription, 'type' => 'billing']); ?>
     <div class="mb-3">
-      <?php
-      set_query_var('site_url', $site_url);
-      set_query_var('subscription', $subscription);
-      set_query_var('type', 'shipping');
-      get_template_part('template-parts/account/address-card');
-      ?>
+      <?php get_template_part('template-parts/account/address-card', null, ['site_url' => $site_url, 'subscription' => $subscription, 'type' => 'shipping']); ?>
     </div>
   </div>
 </div>

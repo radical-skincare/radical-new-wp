@@ -1,4 +1,8 @@
 
+<?php
+$subscription = $args['subscription'];
+$action_links = $args['action_links'];
+?>
 <?php if ($subscription->get_time( 'next_payment' ) > 0) : ?>
   <div class="card mb-3">
     <div class="card-body">

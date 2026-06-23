@@ -1,4 +1,5 @@
 <?php
+$subscription = $args['subscription'];
 $totals = $subscription->get_order_item_totals();
 unset( $totals['payment_method'] );
 $total_savings = radical_get_subscription_savings($subscription);

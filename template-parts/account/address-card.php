@@ -1,6 +1,9 @@
 
 <?php
 $site_url = get_site_url();
+$type = $args['type'];
+$subscription = $args['subscription'] ?? null;
+$order = $args['order'] ?? null;
 $is_subscription = isset($subscription);
 $wc_object = $is_subscription ? $subscription : $order;
 $subscription_id = $is_subscription ? $subscription->get_ID() : false;
