@@ -4,6 +4,11 @@
  */
 jQuery(document).ready(function($) {
 
+  // WP Loyalty (and similar plugins) call jQuery.noConflict(), which clears the
+  // global `$`. Our module files use bare `$` (no bundler), so restore it here —
+  // after all scripts (including deferred) have run, immediately before init.
+  window.$ = jQuery;
+
   // Smooth scroll
   if (typeof SmoothScroll !== 'undefined') {
     new SmoothScroll('a[href*="#"]', {
@@ -22,6 +27,7 @@ jQuery(document).ready(function($) {
       return;
     }
     try {
+      window.$ = jQuery;
       module.onLoad();
     } catch (e) {
       console.error('[main.js] ' + name + '.onLoad() threw an error:', e);

@@ -35,9 +35,9 @@ add_action('wp_enqueue_scripts', function () {
 
     // Some plugins (e.g. WP Loyalty Rules) call jQuery.noConflict() on the
     // frontend, which unsets the global `$`. Our module files reference bare
-    // `$` directly (no bundler to scope it locally), so restore it here, right
-    // before our own scripts enqueue — this runs after any earlier-priority
-    // plugin script that may have called noConflict().
+    // `$` directly (no bundler to scope it locally). Restore it after bootstrap
+    // (before modules parse) and again immediately before main.js runs; main.js
+    // also re-assigns on jQuery ready (after deferred scripts execute).
     wp_add_inline_script('bootstrap-js', 'window.$ = jQuery;', 'after');
 
     // ── Smooth Scroll ────────────────────────────────────────────────────────
@@ -60,6 +60,7 @@ add_action('wp_enqueue_scripts', function () {
 
     // ── Theme JS ─────────────────────────────────────────────────────────────
     wp_enqueue_script('radical/main', $uri . '/assets/js/main.js', ['jquery', 'bootstrap-js', 'smooth-scroll'], '2.0.0', true);
+    wp_add_inline_script('radical/main', 'window.$ = jQuery;', 'before');
 
     // ── Localize ─────────────────────────────────────────────────────────────
     $is_logged_in = is_user_logged_in();
@@ -98,4 +99,4 @@ add_action('wp_enqueue_scripts', function () {
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
-}, 100);
+}, 9999);

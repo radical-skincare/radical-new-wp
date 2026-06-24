@@ -4,6 +4,7 @@ const Form = {
     setTimeout(Form.load, 100)
   },
   load: function() {
+    window.$ = jQuery;
     Form.addFloating($('.form-outline input, .form-outline textarea'))
     Form.addFloating($('.nf-form-outline input, .nf-form-outline textarea'))
     if ($('.template-account #password').length) {
