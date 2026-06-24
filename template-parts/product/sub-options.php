@@ -189,7 +189,15 @@ input[type="radio"]:checked {
     </select>
   </div>
 </div>
-<!-- Hidden fields consumed by add-to-cart logic -->
+<!-- Hidden fields consumed by add-to-cart logic.
+     convert_to_sub has no name attribute on purpose: the WooCommerce All
+     Products for Subscriptions plugin renders its own native radio inputs
+     named convert_to_sub_<id> (one per scheme + a "0" one-time option,
+     hidden visually by CSS). If our field shared that name, the form would
+     submit two values for the same key and PHP would only keep whichever
+     one came last in the request body — a race that silently dropped the
+     user's subscription choice in production. This element is kept only so
+     existing JS bookkeeping (.val() calls) has something to write to. -->
 <input type="hidden" name="subscribe-to-action-input" value="no" id="subscribe-to-action-input" />
-<input type="hidden" name="convert_to_sub_<?php echo $product_id; ?>" value="0" id="convert_to_sub" />
+<input type="hidden" value="0" id="convert_to_sub" />
 <input type="hidden" name="product_id" value="<?php echo esc_html($product_id); ?>" id="product_id" />
