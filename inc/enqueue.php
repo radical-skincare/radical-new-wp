@@ -25,7 +25,7 @@ add_action('wp_enqueue_scripts', function () {
     }
 
     // ── Theme CSS ────────────────────────────────────────────────────────────
-    wp_enqueue_style('radical/main', $uri . '/assets/css/main.css', [], '2.0.0');
+    wp_enqueue_style('radical/main', $uri . '/assets/css/main.css', [], '2.0.1');
 
     // ── Vendor JS ────────────────────────────────────────────────────────────
     if (is_front_page() || is_product()) {
@@ -55,11 +55,11 @@ add_action('wp_enqueue_scripts', function () {
         'ProductPurchaseOptions', 'CheckoutWC',
     ];
     foreach ($modules as $module) {
-        wp_enqueue_script("radical/{$module}", $uri . "/assets/js/modules/{$module}.js", ['jquery', 'bootstrap-js'], '2.0.0', true);
+        wp_enqueue_script("radical/{$module}", $uri . "/assets/js/modules/{$module}.js", ['jquery', 'bootstrap-js'], '4.0.2', true);
     }
 
     // ── Theme JS ─────────────────────────────────────────────────────────────
-    wp_enqueue_script('radical/main', $uri . '/assets/js/main.js', ['jquery', 'bootstrap-js', 'smooth-scroll'], '2.0.0', true);
+    wp_enqueue_script('radical/main', $uri . '/assets/js/main.js', ['jquery', 'bootstrap-js', 'smooth-scroll'], '4.0.2', true);
     wp_add_inline_script('radical/main', 'window.$ = jQuery;', 'before');
 
     // ── Localize ─────────────────────────────────────────────────────────────
