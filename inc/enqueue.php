@@ -3,8 +3,6 @@
  * Theme Assets
  */
 add_action('wp_enqueue_scripts', function () {
-    $uri = get_template_directory_uri();
-
     // ── External fonts ──────────────────────────────────────────────────────
     // fontawesome's version is already pinned in its CDN URL, so reuse it
     // here too. Google Fonts/Typekit URLs carry no version of their own —
@@ -16,22 +14,22 @@ add_action('wp_enqueue_scripts', function () {
 
     // ── Vendor CSS ───────────────────────────────────────────────────────────
     if (is_front_page() || is_product()) {
-        wp_enqueue_style('slick-css', $uri . '/assets/css/vendor/slick.css', false, '1.8.1');
-        wp_enqueue_style('slick-theme', $uri . '/assets/css/vendor/slick-theme.css', false, '1.8.1');
+        wp_enqueue_style('slick-css', radical_versioned_asset_url('assets/css/vendor/slick.css'), false, null);
+        wp_enqueue_style('slick-theme', radical_versioned_asset_url('assets/css/vendor/slick-theme.css'), false, null);
     }
     if (is_post_type_archive('podcasts') || is_post_type_archive('events')) {
-        wp_enqueue_style('owl-carousel', $uri . '/assets/css/vendor/owl.carousel.min.css', [], '2.3.4');
-        wp_enqueue_script('owl-carousel-js', $uri . '/assets/js/vendor/owl.carousel.min.js', ['jquery'], '2.3.4', true);
+        wp_enqueue_style('owl-carousel', radical_versioned_asset_url('assets/css/vendor/owl.carousel.min.css'), [], null);
+        wp_enqueue_script('owl-carousel-js', radical_versioned_asset_url('assets/js/vendor/owl.carousel.min.js'), ['jquery'], null, true);
     }
 
     // ── Theme CSS ────────────────────────────────────────────────────────────
-    wp_enqueue_style('radical/main', $uri . '/assets/css/main.css', [], '2.0.1');
+    wp_enqueue_style('radical/main', radical_versioned_asset_url('assets/css/main.css'), [], null);
 
     // ── Vendor JS ────────────────────────────────────────────────────────────
     if (is_front_page() || is_product()) {
-        wp_enqueue_script('slick-js', $uri . '/assets/js/vendor/slick.min.js', ['jquery'], '1.8.1', true);
+        wp_enqueue_script('slick-js', radical_versioned_asset_url('assets/js/vendor/slick.min.js'), ['jquery'], null, true);
     }
-    wp_enqueue_script('bootstrap-js', $uri . '/assets/js/vendor/bootstrap.bundle.min.js', ['jquery'], '4.3.1', true);
+    wp_enqueue_script('bootstrap-js', radical_versioned_asset_url('assets/js/vendor/bootstrap.bundle.min.js'), ['jquery'], null, true);
 
     // Some plugins (e.g. WP Loyalty Rules) call jQuery.noConflict() on the
     // frontend, which unsets the global `$`. Our module files reference bare
@@ -41,7 +39,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_add_inline_script('bootstrap-js', 'window.$ = jQuery;', 'after');
 
     // ── Smooth Scroll ────────────────────────────────────────────────────────
-    wp_enqueue_script('smooth-scroll', $uri . '/assets/js/vendor/smooth-scroll.min.js', [], '16.1.3', true);
+    wp_enqueue_script('smooth-scroll', radical_versioned_asset_url('assets/js/vendor/smooth-scroll.min.js'), [], null, true);
 
     // ── JS Modules ───────────────────────────────────────────────────────────
     $modules = [
@@ -55,11 +53,23 @@ add_action('wp_enqueue_scripts', function () {
         'ProductPurchaseOptions', 'CheckoutWC',
     ];
     foreach ($modules as $module) {
-        wp_enqueue_script("radical/{$module}", $uri . "/assets/js/modules/{$module}.js", ['jquery', 'bootstrap-js'], '4.0.2', true);
+        wp_enqueue_script(
+            "radical/{$module}",
+            radical_versioned_asset_url("assets/js/modules/{$module}.js"),
+            ['jquery', 'bootstrap-js'],
+            null,
+            true
+        );
     }
 
     // ── Theme JS ─────────────────────────────────────────────────────────────
-    wp_enqueue_script('radical/main', $uri . '/assets/js/main.js', ['jquery', 'bootstrap-js', 'smooth-scroll'], '4.0.2', true);
+    wp_enqueue_script(
+        'radical/main',
+        radical_versioned_asset_url('assets/js/main.js'),
+        ['jquery', 'bootstrap-js', 'smooth-scroll'],
+        null,
+        true
+    );
     wp_add_inline_script('radical/main', 'window.$ = jQuery;', 'before');
 
     // ── Localize ─────────────────────────────────────────────────────────────

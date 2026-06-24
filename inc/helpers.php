@@ -11,6 +11,24 @@ function display_sidebar()
 }
 
 /**
+ * Theme asset URL with the version embedded in the filename for cache busting.
+ * Production strips ?ver= query strings from same-origin static assets, so the
+ * version is inserted before the extension (main.4.0.5.js). assets/.htaccess
+ * rewrites those requests back to the real file.
+ */
+function radical_versioned_asset_url($relative_path)
+{
+    $relative_path = ltrim($relative_path, '/');
+    $ver = wp_get_theme()->get('Version');
+    if (empty($ver)) {
+        return get_template_directory_uri() . '/' . $relative_path;
+    }
+    $versioned = preg_replace('/(\.[^.\/]+)$/', '.' . $ver . '$1', $relative_path);
+
+    return get_template_directory_uri() . '/' . $versioned;
+}
+
+/**
  * Page Title
  */
 function radical_page_title() {

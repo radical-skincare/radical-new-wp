@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# main.4.0.5.js → main.js, Cookie.4.0.5.js → Cookie.js, etc.
+RewriteRule ^(.+)\.[0-9]+\.[0-9]+\.[0-9]+(\.[^.]+)$ $1$2 [L]
+</IfModule>
