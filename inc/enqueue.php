@@ -11,7 +11,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('fonts-typekit', 'https://use.typekit.net/wcu8ruk.css');
 
     // ── Vendor CSS ───────────────────────────────────────────────────────────
-    if (is_front_page()) {
+    if (is_front_page() || is_product()) {
         wp_enqueue_style('slick-css', $uri . '/assets/css/vendor/slick.css', false, null);
         wp_enqueue_style('slick-theme', $uri . '/assets/css/vendor/slick-theme.css', false, null);
     }
@@ -24,7 +24,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('radical/main', $uri . '/assets/css/main.css', [], '2.0.0');
 
     // ── Vendor JS ────────────────────────────────────────────────────────────
-    if (is_front_page()) {
+    if (is_front_page() || is_product()) {
         wp_enqueue_script('slick-js', $uri . '/assets/js/vendor/slick.min.js', ['jquery'], null, true);
     }
     wp_enqueue_script('bootstrap-js', $uri . '/assets/js/vendor/bootstrap.bundle.min.js', ['jquery'], '4.3.1', true);
