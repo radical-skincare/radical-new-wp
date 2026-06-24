@@ -6,17 +6,21 @@ add_action('wp_enqueue_scripts', function () {
     $uri = get_template_directory_uri();
 
     // ── External fonts ──────────────────────────────────────────────────────
-    wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
-    wp_enqueue_style('fonts-josefin', 'https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-    wp_enqueue_style('fonts-typekit', 'https://use.typekit.net/wcu8ruk.css');
+    // fontawesome's version is already pinned in its CDN URL, so reuse it
+    // here too. Google Fonts/Typekit URLs carry no version of their own —
+    // pass null so WP doesn't append its own ?ver=<wp_version> query string
+    // to a third-party host.
+    wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', [], '4.6.3');
+    wp_enqueue_style('fonts-josefin', 'https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap', [], null);
+    wp_enqueue_style('fonts-typekit', 'https://use.typekit.net/wcu8ruk.css', [], null);
 
     // ── Vendor CSS ───────────────────────────────────────────────────────────
     if (is_front_page() || is_product()) {
-        wp_enqueue_style('slick-css', $uri . '/assets/css/vendor/slick.css', false, null);
-        wp_enqueue_style('slick-theme', $uri . '/assets/css/vendor/slick-theme.css', false, null);
+        wp_enqueue_style('slick-css', $uri . '/assets/css/vendor/slick.css', false, '1.8.1');
+        wp_enqueue_style('slick-theme', $uri . '/assets/css/vendor/slick-theme.css', false, '1.8.1');
     }
     if (is_post_type_archive('podcasts') || is_post_type_archive('events')) {
-        wp_enqueue_style('owl-carousel', $uri . '/assets/css/vendor/owl.carousel.min.css');
+        wp_enqueue_style('owl-carousel', $uri . '/assets/css/vendor/owl.carousel.min.css', [], '2.3.4');
         wp_enqueue_script('owl-carousel-js', $uri . '/assets/js/vendor/owl.carousel.min.js', ['jquery'], '2.3.4', true);
     }
 
@@ -25,7 +29,7 @@ add_action('wp_enqueue_scripts', function () {
 
     // ── Vendor JS ────────────────────────────────────────────────────────────
     if (is_front_page() || is_product()) {
-        wp_enqueue_script('slick-js', $uri . '/assets/js/vendor/slick.min.js', ['jquery'], null, true);
+        wp_enqueue_script('slick-js', $uri . '/assets/js/vendor/slick.min.js', ['jquery'], '1.8.1', true);
     }
     wp_enqueue_script('bootstrap-js', $uri . '/assets/js/vendor/bootstrap.bundle.min.js', ['jquery'], '4.3.1', true);
 
