@@ -1,0 +1,99 @@
+<h2>Science-Backed Skincare. Visible Results. Trusted Since 2010.</h2>
+
+<p>Partner with Radical Skincare and earn commissions by sharing one of the most innovative, results-driven skincare brands in the industry.</p>
+
+<p>Founded by sisters Liz and Rachel Edlich, Radical Skincare combines advanced ingredient technology with luxury formulations designed to deliver visible results while supporting healthy, radiant skin.</p>
+
+<p>Whether you&rsquo;re a content creator, influencer, skincare professional, publisher, or trusted voice within your community, the Radical Brand Partner Program provides an opportunity to earn commissions by introducing others to Radical Skincare.</p>
+
+<p><strong>10% Commission &bull; Monthly Payouts &bull; Approval Required</strong></p>
+
+<p><a class="button" href="<?php echo esc_url(home_url('/brand-partner-enrollment/')); ?>">Apply Now</a></p>
+
+<hr />
+
+<h2>Why Partner with Radical?</h2>
+
+<h3>Science-Backed Formulas</h3>
+<p>Share advanced skincare developed with innovative ingredient technology and a commitment to delivering visible results.</p>
+
+<h3>Premium Skincare Brand</h3>
+<p>Represent a luxury skincare brand trusted by customers worldwide since 2010.</p>
+
+<h3>Competitive Commissions</h3>
+<p>Earn 10% commission on qualifying purchases generated through your unique Brand Partner link and customer code.</p>
+
+<h3>Monthly Payouts</h3>
+<p>Commissions are tracked automatically and paid monthly.</p>
+
+<hr />
+
+<h2>How It Works</h2>
+
+<h3>Apply</h3>
+<p>Submit your application to join the Radical Brand Partner Program.</p>
+
+<h3>Get Approved</h3>
+<p>All applications are reviewed prior to acceptance into the program.</p>
+
+<h3>Share</h3>
+<p>Once approved, you&rsquo;ll receive a unique Brand Partner link and customer code to share through your website, blog, social media channels, email communications, or other approved platforms.</p>
+
+<h3>Earn</h3>
+<p>Earn commissions on qualifying purchases generated through your Brand Partner link or customer code.</p>
+
+<hr />
+
+<h2>Who Should Apply?</h2>
+
+<p>We welcome applications from:</p>
+
+<ul>
+  <li>Content Creators</li>
+  <li>Influencers</li>
+  <li>Estheticians &amp; Skincare Professionals</li>
+  <li>Beauty &amp; Wellness Experts</li>
+  <li>Bloggers &amp; Publishers</li>
+  <li>Affiliate Marketers</li>
+  <li>Brand Advocates</li>
+</ul>
+
+<hr />
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is there a cost to join?</h3>
+<p>No. Applying and participating in the Radical Brand Partner Program is free.</p>
+
+<h3>Do I need to be approved?</h3>
+<p>Yes. All Brand Partner applications are reviewed prior to acceptance into the program.</p>
+
+<h3>How are sales tracked?</h3>
+<p>Sales are tracked through your unique Brand Partner link and customer code.</p>
+
+<h3>When are commissions paid?</h3>
+<p>Commissions are paid monthly once a minimum balance of $100 in earned commissions has been reached. Commission balances below $100 will roll over to the following month until the payout threshold is met.</p>
+
+<h3>What commission rate do Brand Partners earn?</h3>
+<p>Approved Brand Partners earn 10% commission on qualifying sales generated through their unique Brand Partner link or customer code.</p>
+
+<h3>Can anyone become a Brand Partner?</h3>
+<p>We welcome applications from individuals and businesses whose audience, content, and values align with the Radical Skincare brand.</p>
+
+<hr />
+
+<h2>Brand Partner Terms</h2>
+
+<p>Participation in the Radical Brand Partner Program is subject to approval and ongoing compliance with program policies. Radical Skincare reserves the right to approve, deny, suspend, or terminate any Brand Partner account at its sole discretion.</p>
+
+<p>Participation in the program does not create an employment, agency, franchise, or business ownership relationship with Radical Skincare.</p>
+
+<hr />
+
+<h2>Join the Radical Brand Partner Program</h2>
+
+<p>Share products you believe in. Earn commissions on qualifying sales.</p>
+
+<p><em>Trusted products. Transparent commissions. A premium skincare brand worth sharing.</em></p>
+
+<p><a class="button" href="<?php echo esc_url(home_url('/brand-partner-enrollment/')); ?>">Apply Now</a></p>
