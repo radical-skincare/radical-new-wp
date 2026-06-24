@@ -65,6 +65,10 @@ function radical_order_subscription_gift_badge($i, $related_order, $is_renewal_g
 
 $gifts = get_field('gifts', 'option');
 $enable_renewal_gifts = $gifts['enable_renewal_gifts'];
+
+if (empty($subscription) || !is_a($subscription, 'WC_Subscription')) {
+  return;
+}
 ?>
 <?php if ($gifts && $enable_renewal_gifts && isset($gifts['renewal_gifts']) && !empty($gifts['renewal_gifts'])) : ?>
   <section class="ror-gifts ps-timeline-sec">

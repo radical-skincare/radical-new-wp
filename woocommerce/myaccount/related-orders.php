@@ -171,7 +171,7 @@ $is_active_affiliate = function_exists('gigfiliate_is_active_affiliate') ? gigfi
     </div>
     <div aria-labelledby="subscriptionDetailsHeading2" class="collapse" data-parent="#subscriptionDetailsAccordion" id="subscriptionDetailsCollapse2">
       <div class="accordion-item_body text-dark-gray p-3">
-        <?php get_template_part('template-parts/account/subscription/ror-gifts'); ?>
+        <?php get_template_part('template-parts/account/subscription/ror-gifts', null, ['subscription' => $subscription]); ?>
       </div>
     </div>
   </div>
