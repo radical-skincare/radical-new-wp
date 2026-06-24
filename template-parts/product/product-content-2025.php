@@ -267,7 +267,7 @@ $section = get_field('clinically_proven_results_section');
     </div>
   </section>
 <?php endif; ?>
-<?php if ($reviews_enabled) : ?>
+<?php if (get_post_meta(get_the_ID(), '_enable_reviews', true)) : ?>
   <section id="reviews" class="reviews bg-lightestgray">
     <?php comments_template(); ?>
   </section>

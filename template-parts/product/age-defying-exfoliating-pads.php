@@ -2,6 +2,7 @@
 global $product;
 $product_id = $product->get_id();
 $product_slug = $product->get_slug();
+$reviews_enabled = get_post_meta($product_id, '_enable_reviews', true);
 ?>
 <style>
 .fs-3x {
