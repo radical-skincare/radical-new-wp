@@ -90,7 +90,6 @@ $terranea_product_id = get_field('terranea_product_id', 'option');
       <?php comments_template(); ?>
     </section>
   <?php endif; ?>
-  <?php get_template_part('template-parts/product/related-products'); ?>
   <div class="modal" id="productVideoModal">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content rounded">

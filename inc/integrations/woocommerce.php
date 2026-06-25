@@ -15,6 +15,12 @@ add_filter('woocommerce_register_post_type_product', function ($args) {
 // Remove related products output
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
+// Render the theme's "Complete The Radical Regimen" related-products section
+// below the Reviews section on single product pages.
+add_action('woocommerce_after_single_product', function () {
+  get_template_part('template-parts/product/related-products');
+}, 5);
+
 // Remove the product rating display on product loops
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
 
