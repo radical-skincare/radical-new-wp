@@ -258,9 +258,13 @@ function get_subscription_interval_period_text($subscription = false) {
     }
     $interval = (int)$subscription->get_billing_interval();
     $period = $subscription->get_billing_period();
-    if ($interval === 1 && $period === 'month') {
+    // The change-frequency modal only offers month-based options and updates
+    // _billing_interval without touching _billing_period, so a subscription
+    // may have a non-month period stored. Mirror the modal's label logic
+    // here so the card display stays consistent with the modal.
+    if ($interval === 1) {
         return 'Every Month';
-    } else if ($interval === 2 && $period === 'month') {
+    } else if ($interval === 2) {
         return 'Every Two Months';
     }
     return $interval . ' ' . $period;
