@@ -39,7 +39,7 @@ get_header(); ?>
       <?php if ($is_user_logged_in && !$agreed_to_latest_terms) : ?>
         <?php get_template_part('template-parts/account/privacy-policy'); ?>
       <?php else : ?>
-        <div class="gig-dashboard-version-switcher mb-3">
+        <?php /* <div class="gig-dashboard-version-switcher mb-3">
           <div class="btn-group" role="group">
             <a href="<?php echo esc_url($site_url); ?>/account/brand-partner-dashboard/" class="btn btn-outline-dark">
               Current (Legacy)
@@ -48,7 +48,7 @@ get_header(); ?>
               New (Beta)
             </a>
           </div>
-        </div>
+        </div> */ ?>
         <?php get_template_part('template-parts/content', 'page'); ?>
         <div class="my-5"></div>
         <?php get_template_part('template-parts/account/cta'); ?>
