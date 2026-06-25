@@ -263,9 +263,9 @@ $future_formatted_date = date('F j, Y', strtotime($future_date));
         <div class="modal-body">
           <p>Select a next order date 60 days from today.</p>
           <?php
-          $next_payment_date_str = $subscription->get_date_to_display('next_payment');
+          $next_payment_date_str = $subscription->get_date('next_payment');
           $timestamp = strtotime($next_payment_date_str);
-          $next_payment_formatted_date = date('Y-m-d', $timestamp);
+          $next_payment_formatted_date = $timestamp ? date('Y-m-d', $timestamp) : '';
           // min date
           $today_date = date('Y-m-d');
           $timestamp = strtotime($today_date);

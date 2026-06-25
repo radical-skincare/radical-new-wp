@@ -565,3 +565,29 @@ add_action('wp_ajax_radical_wc_update_subscription_new_order_date', function () 
   $subscription->add_order_note($note, true, true);
   wp_die(json_encode($res));
 });
+
+/*
+ * Normalize the recurring suffix on subscription totals tables.
+ * The change-frequency modal only updates _billing_interval, so the stored
+ * _billing_period can drift (e.g. "every 2 days"). Replace the suffix using
+ * the same interval-based logic the modal uses for its labels.
+ */
+add_filter('woocommerce_get_order_item_totals', function ($total_rows, $order, $tax_display) {
+  if (!function_exists('wcs_is_subscription') || !wcs_is_subscription($order)) {
+    return $total_rows;
+  }
+  if (!isset($total_rows['order_total']['value'])) {
+    return $total_rows;
+  }
+  $interval = (int)$order->get_billing_interval();
+  if ($interval !== 1 && $interval !== 2) {
+    return $total_rows;
+  }
+  $label = $interval === 1 ? 'every month' : 'every two months';
+  $total_rows['order_total']['value'] = preg_replace(
+    '/every\s+(?:\d+\s+)?\w+/i',
+    $label,
+    $total_rows['order_total']['value']
+  );
+  return $total_rows;
+}, 20, 3);
