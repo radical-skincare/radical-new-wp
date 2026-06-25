@@ -16,8 +16,7 @@ function display_sidebar()
  * version is inserted before the extension (main.4.0.5.js). assets/.htaccess
  * rewrites those requests back to the real file.
  */
-function radical_versioned_asset_url($relative_path)
-{
+function radical_versioned_asset_url($relative_path) {
     $relative_path = ltrim($relative_path, '/');
     $ver = wp_get_theme()->get('Version');
     if (empty($ver)) {
