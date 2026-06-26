@@ -1,12 +1,14 @@
 <?php
 $enrollment_url = get_site_url() . '/brand-partner/enrollment';
+$hero_image_url = 'https://radicalskincare.com/wp-content/uploads/2026/06/radical-brand-partner-people-smiling-.jpg';
 ?>
 
 <!-- Hero -->
 <section id="hero" class="hero hero_image-right bg-lightestgray">
   <div class="container-fluid">
     <div class="row">
-      <div class="d-flex justify-content-center align-items-center col-12 bg-lightestgray p-3 p-lg-5">
+      <img src="<?php echo esc_url($hero_image_url); ?>" alt="Radical Brand Partner Program" class="d-lg-none hero-image-mobile"/>
+      <div class="d-flex justify-content-center align-items-center col-lg-6 bg-lightestgray p-3 p-lg-5">
         <div class="text-container p-3 p-lg-0 text-center">
           <div class="fs-1.5x mb-1 font-weight-normal text-darker-gray text-uppercase">
             Radical Brand Partner Program
@@ -17,9 +19,10 @@ $enrollment_url = get_site_url() . '/brand-partner/enrollment';
           <p class="fs-1.25x text-dark-gray font-weight-light">
             10% Commission &bull; Monthly Payouts &bull; Approval Required
           </p>
-          <a href="<?php echo esc_url($enrollment_url); ?>" class="btn btn-darkergray">Apply Now</a>
+          <a href="<?php echo esc_url($enrollment_url); ?>" class="link-underline link-underline_darker-gray">Apply Now</a>
         </div>
       </div>
+      <div class="d-none d-lg-block col-lg-6 hero-image-container" style="background-image: url('<?php echo esc_url($hero_image_url); ?>');"></div>
     </div>
   </div>
 </section>
@@ -36,7 +39,10 @@ $enrollment_url = get_site_url() . '/brand-partner/enrollment';
   </div>
   <div class="container px-lg-5" style="margin-top: -50px">
     <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-12 col-lg-10 px-lg-3 mb-3 mb-lg-0">
+      <div class="col-12 col-lg-6 px-lg-3 mb-3 mb-lg-0">
+        <img src="https://radicalskincare.com/wp-content/uploads/2022/08/radical-brand-partners.jpg" alt="Radical Brand Partners" class="w-100 rounded"/>
+      </div>
+      <div class="col-12 col-lg-6 px-lg-3 mb-3 mb-lg-0">
         <p class="text-dark-gray font-weight-light">
           Founded by sisters Liz and Rachel Edlich, Radical Skincare combines advanced ingredient technology with luxury formulations designed to deliver visible results while supporting healthy, radiant skin.
         </p>
