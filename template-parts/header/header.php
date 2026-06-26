@@ -103,9 +103,11 @@ $is_active_affiliate = ($is_user_logged_in && function_exists('gigfiliate_is_act
                   </a>
                 </div>
               </li>
+              <?php /* Temporarily hidden — restore later
               <li class="nav-item">
                 <a href="<?php echo esc_url($site_url); ?>/brand-partner/" class="nav-link">Join Brand Partners</a>
               </li>
+              */ ?>
               <?php if ($is_user_logged_in) : ?>
                 <?php
                 $most_recent_subscription_id = get_posts([
