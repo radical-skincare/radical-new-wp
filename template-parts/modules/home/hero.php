@@ -135,13 +135,42 @@
             style="background-image: url('<?php echo esc_url($slide['mobile_image']['url']); ?>');"
             >
               <style>
+              .home-hero_item-<?php echo esc_attr($key); ?>.hero_image-link {
+                position: relative !important;
+                overflow: hidden !important;
+              }
+              .home-hero_item-<?php echo esc_attr($key); ?> .hero_image-link_blur-overlay {
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                background-color: rgba(0, 0, 0, 0.25) !important;
+                -webkit-backdrop-filter: blur(20px) !important;
+                backdrop-filter: blur(20px) !important;
+                z-index: 1 !important;
+                pointer-events: none !important;
+              }
+              .home-hero_item-<?php echo esc_attr($key); ?> .hero_image-link_inner-container {
+                display: block !important;
+                position: relative !important;
+                z-index: 2 !important;
+                background-image: url('<?php echo esc_url($slide['mobile_image']['url']); ?>') !important;
+                background-position: center !important;
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
+              }
               @media (min-width: 992px) {
                 .home-hero_item-<?php echo esc_attr($key); ?> {
                   background-image: url('<?php echo esc_url($slide['image']['url']); ?>') !important;
                 }
+                .home-hero_item-<?php echo esc_attr($key); ?> .hero_image-link_inner-container {
+                  background-image: url('<?php echo esc_url($slide['image']['url']); ?>') !important;
+                }
               }
               </style>
-              <a class="container" href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>">
+              <div class="hero_image-link_blur-overlay"></div>
+              <a class="container hero_image-link_inner-container" href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>">
                 <div class="row align-items-center">
                   <div class="col-9 col-lg-5 offset-lg-7">
                     <?php if ($heading = $slide['heading']) : ?>
