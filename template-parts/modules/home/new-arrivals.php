@@ -41,7 +41,7 @@
             <?php foreach ($products as $product) : ?>
               <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
                 <?php
-                get_template_part('template-parts/content', 'product');
+                get_template_part('template-parts/content', 'product', ['product' => $product]);
                 ?>
               </div>
             <?php endforeach; ?>
